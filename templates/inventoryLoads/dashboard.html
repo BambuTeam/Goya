@@ -1,0 +1,97 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+<div class="row">
+
+    <div class="col-lg-3 col-6">
+        <!-- small card -->
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>{{ total_ingresos }}</h3>
+                <p>User Registrations</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <!-- small card -->
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>44</h3>
+                <p> Proveedores </p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class = "container">
+ <div class="row">
+    <div class="col-md-12">
+        <div class="card-header">
+            <h3 class="card-title">Ingreso de productos a Inventario</h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    </div>
+
+ </div>
+
+
+</div>
+
+    <div class="col-md-12">
+
+
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm btn-block" href="">Create a Customer</a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>NAME</th>
+                    <th>STOCK</th>
+                    <th>CATEGORY</th>
+                    <th>OPTIONS</th>
+
+                </tr>
+               {% for article in object_list %}
+                <tr>
+                    <td><a href="">View</a></a></td0>
+                    <td>{{article.name}}</td>
+                    <td>{{article.stock}}</td>
+                    <td>{{article.category}}</td>
+                    <td>update and remove</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+    
+
+    
+
+
+</div>
+{% endblock %}

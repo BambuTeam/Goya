@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{%  load static %}
+{% block content_head %}
+<h3>New Item</h3>
+{% endblock %}
+{% block content_main %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form }}
+
+        <button class="btn btn-primary btn-block mt-5" type="submit">Register!</button>
+
+    </form>
+
+
+    
+
+
+</div>
+{% endblock %}

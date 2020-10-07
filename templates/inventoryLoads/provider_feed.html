@@ -1,0 +1,77 @@
+{% extends 'main.html' %}
+{% block content_head %}
+
+<h1 class="m-0 text-dark">Dashboard</h1>
+{% endblock %}
+{% block content_main %}
+
+<div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Available Providers </h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                        <th>Name</th>
+                      <th>Address</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                        <th>Opitions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for provider in page_object %}
+                      <tr>
+                      <td>{{ provider.name }}</td>
+                      <td>{{ provider.address }}</td>
+                      <td>{{ provider.email }}</td>
+                      <td>{{ provider.phone }}</td>
+                      <td><div class="btn-group">
+                        <a href="#" class="btn btn-info">Edit</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                      </div>
+                      </td>
+                      </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+<div class="pagination">
+    <span class="step-links">
+        {% if page_object.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_object.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_object.number }} of {{ page_object.paginator.num_pages }}.
+        </span>
+
+        {% if page_object.has_next %}
+            <a href="?page={{ page_object.next_page_number }}">next</a>
+            <a href="?page={{ page_object.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+
+
+
+{% endblock %}
