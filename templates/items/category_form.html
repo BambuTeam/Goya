@@ -22,7 +22,8 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                  <form>
+                  <form method="POST" enctype="multipart/form-data">
+                      {% crsf_token %}
                       {{ form }}
                       <input type="submit" class="btn btn-info">
                   </form>

@@ -1,11 +1,21 @@
 from django.shortcuts import render, redirect
 from items.models import Item, Category, Tag
 from items.forms import *
+from django.views.generic import ListView
+
+# Create your views here.o
 
 
-# Create your views here.
+class ItemsListView(ListView):
+    template_name = 'items/feed.html'
+    model = Item
+    paginate_by = 10
+    context_object_name = 'items'
+
+
 def items_feed(request):
     items = Item.objects.all()
+
     context = {
         'items': items,
     }

@@ -4,7 +4,7 @@ from items import views
 urlpatterns = [
     path(
         route='',
-        view=views.items_feed,
+        view=views.ItemsListView.as_view(),
         name = 'items_feed'
     ),
     path(
