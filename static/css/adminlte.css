@@ -65,7 +65,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #000;
   text-align: left;
   background-color: #ffffff;
 }
@@ -13802,7 +13802,7 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-navy {
-  background-color: #3d9970;
+  background-color: #002D79;
 }
 
 .navbar-olive {
