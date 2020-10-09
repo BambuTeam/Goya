@@ -42,6 +42,16 @@
 }
 
 
+@font-face {
+  font-family: goya-font;
+  src: url(/fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+  font-family: goya-font-b;
+  src: url(/fonts/bebas.otf);
+}
+
 *,
 *::before,
 *::after {
@@ -13792,12 +13802,14 @@ body.text-sm .control-sidebar {
 .navbar-warning {
   background-color: #ffc107;
   height: 180px;
+
 }
 
 .navbar-warning img{
 
   margin-top: 40px !important;
   margin-bottom: auto !important;
+
 
 }
 
@@ -28006,6 +28018,7 @@ blockquote.quote-gray-dark h6 {
 
 .elevation-2 {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+  border: solid 5px #fff;
 }
 
 .elevation-3 {
