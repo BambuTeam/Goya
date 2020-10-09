@@ -9,17 +9,11 @@ from django.views.generic import ListView
 class ItemsListView(ListView):
     template_name = 'items/feed.html'
     model = Item
-    paginate_by = 10
+    paginate_by = 5
     context_object_name = 'items'
 
 
-def items_feed(request):
-    items = Item.objects.all()
 
-    context = {
-        'items': items,
-    }
-    return render(request, 'items/feed.html', context)
 
 
 def item_new(request):
