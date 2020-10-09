@@ -13791,6 +13791,14 @@ body.text-sm .control-sidebar {
 
 .navbar-warning {
   background-color: #ffc107;
+  height: 180px;
+}
+
+.navbar-warning img{
+
+  margin-top: 40px !important;
+  margin-bottom: auto !important;
+
 }
 
 .navbar-danger {
@@ -27189,7 +27197,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .img-circle {
-  border-radius: 50%;
+  border-radius: 200px;
 }
 
 .img-size-64,
