@@ -12240,7 +12240,12 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 
 .sidebar-dark-navy .nav-sidebar.nav-legacy > .nav-item > .nav-link.active,
 .sidebar-light-navy .nav-sidebar.nav-legacy > .nav-item > .nav-link.active {
-  border-color: #001f3f;
+  border-color: red;
+  -webkit-box-shadow: 0px 15px 10px -12px rgba(13,13,13,0.46);
+  -moz-box-shadow: 0px 15px 10px -12px rgba(13,13,13,0.46);
+  box-shadow: 0px 15px 10px -12px rgba(13,13,13,0.46);
+  
+  
 }
 
 .sidebar-dark-olive .nav-sidebar > .nav-item > .nav-link.active,
@@ -13801,7 +13806,7 @@ body.text-sm .control-sidebar {
 
 .navbar-warning {
   background-color: #ffc107;
-  height: 180px;
+  height: 255px;
 
 }
 
@@ -17824,6 +17829,7 @@ textarea.form-control.is-warning {
 .card.bg-dark,
 .card.bg-dark .card-body {
   color: #ffffff;
+  
 }
 
 .card.maximized-card {
@@ -27901,10 +27907,12 @@ blockquote.quote-gray-dark h6 {
   }
   .table-responsive {
     overflow: auto;
+    
   }
   .table-responsive > .table tr th,
   .table-responsive > .table tr td {
     white-space: normal !important;
+    
   }
 }
 
