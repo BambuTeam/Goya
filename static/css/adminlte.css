@@ -44,12 +44,12 @@
 
 @font-face {
   font-family: goya-font;
-  src: url(/fonts/BebasNeue-Regular.ttf);
+  src: url(/static/fonts/BebasNeue-Regular.eot);
 }
 
 @font-face {
   font-family: goya-font-b;
-  src: url(/fonts/bebas.otf);
+  src: url(/static/fonts/PTC55F.ttf);
 }
 
 *,
@@ -3426,6 +3426,7 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item {
+  padding-top: 20px;
   display: block;
   width: 100%;
   padding: 0.25rem 1rem;
@@ -3436,12 +3437,13 @@ input[type="button"].btn-block {
   white-space: nowrap;
   background-color: transparent;
   border: 0;
+  border-top: solid #FFC430 1px;
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  color: #16181b;
+  color: #fff;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #FFC430;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -11426,8 +11428,13 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .content-wrapper {
-  background: #f4f6f9;
+background-image: url(/media/img-dash/background.svg);
+background-repeat: no-repeat;
+background-size: cover;
+  
 }
+
+
 
 .content-wrapper > .content {
   padding: 0 0.5rem;
@@ -12240,7 +12247,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 
 .sidebar-dark-navy .nav-sidebar.nav-legacy > .nav-item > .nav-link.active,
 .sidebar-light-navy .nav-sidebar.nav-legacy > .nav-item > .nav-link.active {
-  border-color: red;
+  border-color: #D89500;
   -webkit-box-shadow: 0px 15px 10px -12px rgba(13,13,13,0.46);
   -moz-box-shadow: 0px 15px 10px -12px rgba(13,13,13,0.46);
   box-shadow: 0px 15px 10px -12px rgba(13,13,13,0.46);
@@ -13444,6 +13451,7 @@ body.text-sm .control-sidebar {
 }
 
 .dropdown-item-title {
+
   font-size: 1rem;
   margin: 0;
 }
@@ -13453,6 +13461,10 @@ body.text-sm .control-sidebar {
 }
 
 .dropdown-menu-lg {
+
+  
+  margin-top: 20px;
+  border: solid #FFC430 2px;
   max-width: 300px;
   min-width: 280px;
   padding: 0;
@@ -31249,3 +31261,30 @@ a.text-muted:hover {
   color: #ffffff;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+
+/*==============================
+    SEARCH BAR
+===============================*/
+
+
+.text-user{
+  color: #fff;
+    
+    text-shadow: 
+      -1px -1px 1px #111, 
+      1px 1px 1px #363636;
+  font-family: goya-font-b !important;
+  margin-top: -10px;
+  
+  
+}
+
+.text-user:hover{
+  font-family: goya-font-b !important;
+  margin-top: -10px;
+  color: #fff;
+  
+  text-decoration: underline;
+  
+}
