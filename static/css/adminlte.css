@@ -11512,9 +11512,9 @@ background-size: cover;
 }
 
 .main-footer {
-  background: #ffffff;
+  background: #1f1f1f;
   border-top: 1px solid #dee2e6;
-  color: #869099;
+  color: #fff;
   padding: 1rem;
 }
 
