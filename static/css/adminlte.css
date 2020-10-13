@@ -44,12 +44,12 @@
 
 @font-face {
   font-family: goya-font;
-  src: url(/fonts/BebasNeue-Regular.ttf);
+  src: url(/static/fonts/BebasNeue-Regular.eot);
 }
 
 @font-face {
   font-family: goya-font-b;
-  src: url(/fonts/bebas.otf);
+  src: url(/static/fonts/PTC55F.ttf);
 }
 
 *,
@@ -11428,8 +11428,13 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .content-wrapper {
-  background: #f4f6f9;
+background-image: url(/media/img-dash/background.svg);
+background-repeat: no-repeat;
+background-size: cover;
+  
 }
+
+
 
 .content-wrapper > .content {
   padding: 0 0.5rem;
@@ -31263,3 +31268,23 @@ a.text-muted:hover {
 ===============================*/
 
 
+.text-user{
+  color: #fff;
+    
+    text-shadow: 
+      -1px -1px 1px #111, 
+      1px 1px 1px #363636;
+  font-family: goya-font-b !important;
+  margin-top: -10px;
+  
+  
+}
+
+.text-user:hover{
+  font-family: goya-font-b !important;
+  margin-top: -10px;
+  color: #fff;
+  
+  text-decoration: underline;
+  
+}
