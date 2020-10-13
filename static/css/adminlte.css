@@ -4296,6 +4296,7 @@ input[type="button"].btn-block {
 }
 
 .nav-link {
+ 
   display: block;
   padding: 0.5rem 1rem;
 }
@@ -11512,9 +11513,9 @@ background-size: cover;
 }
 
 .main-footer {
-  background: #ffffff;
+  background: #1f1f1f;
   border-top: 1px solid #dee2e6;
-  color: #869099;
+  color: #fff;
   padding: 1rem;
 }
 
@@ -31287,4 +31288,8 @@ a.text-muted:hover {
   
   text-decoration: underline;
   
+}
+
+.content-main{
+  margin-top: 93px;
 }
