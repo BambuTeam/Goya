@@ -4296,6 +4296,7 @@ input[type="button"].btn-block {
 }
 
 .nav-link {
+ 
   display: block;
   padding: 0.5rem 1rem;
 }
@@ -31287,4 +31288,8 @@ a.text-muted:hover {
   
   text-decoration: underline;
   
+}
+
+.content-item{
+  margin-top: 90px;
 }
