@@ -23,4 +23,14 @@ urlpatterns = [
         view = views.inventoryload_feed,
         name = 'inventory_lodad_feed'
     ),
+    path(
+        route ='<int:pk>',
+        view = views.inventoryLoad_detail,
+        name = 'inventory_load_detail'
+    ),
+    path(
+        route = 'new',
+        view = views.InventoryCreateview.as_view(),
+        name = 'inventory_new'
+    )
 ]

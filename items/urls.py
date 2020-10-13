@@ -32,4 +32,5 @@ urlpatterns = [
         view = views.categories_edit,
         name = 'categories_edit'
     )
+
 ]

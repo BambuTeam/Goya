@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% block content_head %}
+
+<h1 class="m-0 text-dark">Dashboard</h1>
+{% endblock %}
+{% block content_main %}
+
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Available Providers </h3>
+
+      <div class="card-tools">
+        <div class="input-group input-group-sm" style="width: 150px;">
+          <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body table-responsive p-0">
+     <form method = "post">
+     {% csrf_token %}
+     {{form.as_p}}
+     <br>
+     {{ children }}<br>
+     </form>
+
+      {% include 'paginator.html'%}
+
+      </div>
+
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+
+
+
+{% endblock %}

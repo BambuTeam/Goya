@@ -30,5 +30,6 @@ class Item(models.Model):
     user_update = models.CharField(max_length=45,null=True)
     photo = models.ImageField(upload_to='Items', default= 'default.img')
 
+
     def __str__(self):
         return self.name
