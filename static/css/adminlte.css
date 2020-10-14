@@ -11823,6 +11823,7 @@ background-color: #fefefe;
   padding-right: 0.5rem;
   padding-top: 0;
   background-color: #212121;
+  border-right: solid #ffc107 3px;
 }
 
 .sidebar p {
@@ -28062,7 +28063,7 @@ blockquote.quote-gray-dark h6 {
 
 .elevation-2 {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
-  border: solid 5px #fff;
+  border: solid 5px #fefefe;
 }
 
 .elevation-3 {
