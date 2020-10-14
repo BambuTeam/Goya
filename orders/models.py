@@ -10,7 +10,7 @@ class DeliveryType(models.Model):
 
 
 class Delivery(models.Model):
-    delibery_type = models.ForeignKey(DeliberyType, null=False, on_delete = models.PROTECT)
+    delibery_type = models.ForeignKey(DeliveryType, null=False, on_delete = models.PROTECT)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     delibery_date = models.DateField()
