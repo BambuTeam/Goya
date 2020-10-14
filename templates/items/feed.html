@@ -6,15 +6,15 @@
 
 {% endblock %}
 {% block content_main %}
-
-    <div class = "col-md-1" style="align-items: flex-end;">
-        <a  href="{% url 'items:item_new' %}" class = "btn-add-item" id="rotation"> </a>
-        
+    
+    <div class = "col-md-1 pl-5" style="align-items: flex-end;">
+        <a  href="{% url 'items:item_new' %}" class = "btn-add-item " id="rotation"> </a>
     </div>
-<div class="col-12">
+    <br>
+<div class="col-12 pl-5 pr-5">
             <div class="card">
               <div class="card-header bk-tab">
-                <h3 class="card-title text-goya ">Available Items </h3>
+                <h3 class="card-title text-goya ">ITEMS</h3>
                  <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search"
@@ -69,7 +69,11 @@
             </div>
             <!-- /.card -->
 </div>
-    <div class="pagination">
+<div style="margin-top: 20px; height: 150px;" class="pl-5">
+    <div class="pagination pl-5">
+    
+
+    </div>
         {% include 'paginator.html' %}
 </div>
 
