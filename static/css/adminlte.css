@@ -44,7 +44,7 @@
 
 @font-face {
   font-family: goya-font;
-  src: url(/static/fonts/BebasNeue-Regular.eot);
+  src: url(/static/fonts/GothamMedium.ttf);
 }
 
 @font-face {
@@ -4823,6 +4823,7 @@ input[type="button"].btn-block {
 
 .card-title {
   margin-bottom: 0.75rem;
+  
 }
 
 .card-subtitle {
@@ -31265,7 +31266,7 @@ a.text-muted:hover {
 
 
 /*==============================
-    SEARCH BAR
+    CUSTOMIZE CSS
 ===============================*/
 
 
@@ -31292,4 +31293,36 @@ a.text-muted:hover {
 
 .content-main{
   margin-top: 93px;
+}
+
+.btn-add-item{
+  content: url(/media/img-dash/ico/plus.svg);
+  max-width: 50%;
+}
+
+.btn-add-item:hover{
+  content: url(/media/img-dash/ico/plus-hover.svg);
+  max-width: 50%;
+}
+  
+  @-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+.text-goya{
+  font-family: goya-font ;
+  color: #000;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+ 
+}
+
+.bk-tab{
+  border: solid 2px;
 }

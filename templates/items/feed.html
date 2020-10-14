@@ -1,20 +1,27 @@
 {% extends 'main.html' %}
 {% block content_head %}
 
-<h1 class="m-0 text-dark">Dashboard</h1>
+<!-- <h1 class="m-0 text-dark">Dashboard</h1> -->
+
+
 {% endblock %}
 {% block content_main %}
 
+    <div class = "col-md-1" style="align-items: flex-end;">
+        <a  href="{% url 'items:item_new' %}" class = "btn-add-item" id="rotation"> </a>
+        
+    </div>
 <div class="col-12">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Available Items </h3>
-                <div class="card-tools">
-
+              <div class="card-header bk-tab">
+                <h3 class="card-title text-goya ">Available Items </h3>
+                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-                      <a href="{ url 'items:item_new}" class="btn btn-default">New Item</a>
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search"
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
                   </div>
-
                 </div>
               </div>
               <!-- /.card-header -->
@@ -61,7 +68,7 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-          </div>
+</div>
     <div class="pagination">
         {% include 'paginator.html' %}
 </div>
