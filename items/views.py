@@ -10,7 +10,7 @@ from django.urls import reverse_lazy
 class ItemsListView(ListView):
     template_name = 'items/feed.html'
     model = Item
-    paginate_by = 5
+    paginate_by = 10
     context_object_name = 'items'
 
 
