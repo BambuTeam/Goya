@@ -13,9 +13,6 @@ class ItemsListView(ListView):
     context_object_name = 'items'
 
 
-
-
-
 def item_new(request):
     item_form = ItemForm()
     if request.method == 'POST':
