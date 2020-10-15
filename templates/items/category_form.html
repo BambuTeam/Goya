@@ -23,8 +23,32 @@
               <!-- /.card-header -->
               <div class="card-body p-0">
                   <form method="POST" enctype="multipart/form-data">
-                      {% crsf_token %}
-                      {{ form }}
+                      {% csrf_token %}
+                          <div class="form-group">
+                        <input
+                            class="form-control {% if form.name.errors %}is-invalid{% endif %}"
+                            type="text"
+                            name="name"
+                            placeholder="Insert the category name ..."
+                        >
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}{{ error }}{% endfor %}
+                        </div>
+                    </div>
+              <div class="form-group">
+                        <input
+                            class="form-control {% if form.description.errors %}is-invalid{% endif %}"
+                            type="text"
+                            name="description"
+                            placeholder="Insert the category name ..."
+                        >
+                        <div class="invalid-feedback">
+                            {% for error in form.description.errors %}{{ error }}{% endfor %}
+                        </div>
+                    </div>
+
+                    {# Photo field #}
+            
                       <input type="submit" class="btn btn-info">
                   </form>
 

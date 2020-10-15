@@ -29,7 +29,13 @@ urlpatterns = [
     ),
     path(
         route = 'categories/<int:pk>',
-        view = views.categories_edit,
+        view = views.CategoryUpdate.as_view(),
         name = 'categories_edit'
-    )
+    ),
+    path(
+        route = 'categories/new',
+        view = views.CategoryCreate.as_view(),
+        name = 'categories_new'
+    ),
+
 ]
