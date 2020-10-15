@@ -27,7 +27,7 @@
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
-                  <thead>
+                  <thead class="head-td">
                     <tr>
                         <th>Image</th>
                       <th>Name</th>
@@ -45,7 +45,7 @@
                       </td>
                       <td>{{ item.name }}</td>
                       <td>{{ item.price }}</td>
-                      <td>{{ item.description }}</td>
+                      <td style="text-align: left !important;">{{ item.description }}</td>
                       <td>
                           {% if item.stock > 0 %}
                           <span class="tag tag-success">{{ item.stock }} aviable</span></td>

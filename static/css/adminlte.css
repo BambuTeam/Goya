@@ -1718,16 +1718,18 @@ pre code {
 
 .table th,
 .table td {
-  text-align: justify;
+  text-align: center;
   padding: 0.55rem;
   vertical-align: top;
   border-top: solid 2px #ffc107;
   border-left: solid 1px #ffc10712;
+  
 }
 
 .table thead th {
   vertical-align: bottom;
   border-bottom: 1px solid #ffc107;
+  border-left: solid 2px #9f780235;
 }
 
 .table tbody + tbody {
@@ -11823,7 +11825,12 @@ background-color: #fefefe;
   padding-right: 0.5rem;
   padding-top: 0;
   background-color: #212121;
-  border-right: solid #ffc107 3px;
+  border-right: solid #ffc107 5px;
+  -webkit-box-shadow: -7px 6px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -7px 6px 5px 0px rgba(0,0,0,0.75);
+box-shadow: -7px 6px 5px 0px rgba(0,0,0,0.75);
+
+  
 }
 
 .sidebar p {
@@ -11972,7 +11979,16 @@ background-color: #fefefe;
 }
 
 .nav-sidebar .nav-header:not(:first-of-type) {
-  padding: 1.7rem 1rem .5rem;
+  color:#fefefe;
+  background-color: inherit;
+  font-family: goya-font;
+  
+  font-size: 10px;
+  padding: 1rem 1.8rem .5rem;
+  font-weight: bold;
+  -webkit-box-shadow: -8px -4px 14px -10px rgba(0,0,0,1);
+-moz-box-shadow: -8px -4px 14px -10px rgba(0,0,0,1);
+box-shadow: -8px -4px 14px -10px rgba(0,0,0,1);
 }
 
 .nav-sidebar .nav-link p {
@@ -12630,7 +12646,7 @@ background-color: #fefefe;
 }
 
 .nav-legacy.nav-sidebar > .nav-item > .nav-link.active {
-  background: inherit;
+  background: repeating-linear-gradient(45deg, black, transparent 100px);
   border-left: 3px solid transparent;
   box-shadow: none;
 }
@@ -13865,6 +13881,9 @@ body.text-sm .control-sidebar {
 
 .navbar-navy {
   background-color: #212121;
+  border-bottom: 5px solid;
+  border-image-source: linear-gradient(to left, #ffc107, #212121);
+  border-image-slice: 1;
 }
 
 .navbar-olive {
@@ -31350,3 +31369,23 @@ a.text-muted:hover {
 -moz-box-shadow: 3px -2px 20px 1px rgba(33,33,33,0.24);
 box-shadow: 3px -2px 20px 1px rgba(33,33,33,0.24);
 }
+
+.head-td{
+  background-color: #ffc10722;
+  font-family: goya-font;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
+}
+
+.head-td th {
+  text-align: center;
+  
+}
+
+
+
