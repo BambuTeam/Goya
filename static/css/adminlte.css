@@ -77,7 +77,8 @@ body {
   line-height: 1.5;
   color: #000;
   text-align: left;
-  background-color: #ffffff;
+  background-color: #212121;
+  border-right: left #ffc107 5px;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -4835,7 +4836,9 @@ box-shadow: 3px -2px 20px 1px rgba(33,33,33,0.24);
 }
 
 .card-title {
-  margin-bottom: 0.75rem;
+  /* margin-bottom: 0.5rem; */
+  margin-top: 20px;
+  padding-top: 0.20em;
   
 }
 
@@ -31338,11 +31341,13 @@ a.text-muted:hover {
 }
 
 .btn-add-item{
+  margin-left: 1em;
   content: url(/media/img-dash/ico/plus.svg);
   max-width: 30%;
 }
 
 .btn-add-item:hover{
+  margin-left: 1em;
   content: url(/media/img-dash/ico/plus-hover.svg);
   max-width: 30%;
 }
@@ -31387,5 +31392,8 @@ box-shadow: 3px -2px 20px 1px rgba(33,33,33,0.24);
   
 }
 
-
+.search-bar{
+  height: 80% !important;
+  display: none;
+}
 

@@ -6,30 +6,33 @@
 
 {% endblock %}
 {% block content_main %}
+{%include 'searchbar.html'%}
     
-    <div class = "col-md-1 pl-5" style="align-items: flex-end;">
+    <!-- <div class = "col-md-1 pl-5" style="align-items: flex-end;">
         <a  href="{% url 'items:item_new' %}" class = "btn-add-item " id="rotation"> </a>
-    </div>
+    </div> -->
     <br>
+    
 <div class="col-12 pl-5 pr-5">
             <div class="card">
               <div class="card-header bk-tab">
                 <h3 class="card-title text-goya ">ITEMS</h3>
+                
+                <div class = "col-md-1 pl-5" style="align-items: flex-end;">
+                  <a  href="{% url 'items:item_new' %}" class = "btn-add-item " id="rotation"> </a>
+              </div>
                  <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search"
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
+            </div>
+
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                   <thead class="head-td">
                     <tr>
-                        <th>Image</th>
+                      <th>Image</th>
                       <th>Name</th>
                       <th>Price</th>
                       <th>Description</th>
