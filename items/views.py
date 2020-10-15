@@ -9,7 +9,7 @@ from django.views.generic import ListView
 class ItemsListView(ListView):
     template_name = 'items/feed.html'
     model = Item
-    paginate_by = 5
+    paginate_by = 10
     context_object_name = 'items'
 
 
