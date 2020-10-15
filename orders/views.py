@@ -3,13 +3,7 @@ from orders.models import *
 from django.views.generic import ListView
 
 # Create your views here.
-
-class DeliveTypeList(ListView):
-    model = DeliveryType
-    context_object_name = 'DeliveryType'
-    paginate_by = 10
-    template_name='orders/delivertype_feed.html'
-
+#en des uso por ser codigo muerto 
 
 class DeliveryList(ListView):
     model = Delivery
