@@ -17,3 +17,5 @@ class OrderList(ListView):
     context_object_name = Order
     paginate_by = 10 
     template_name = 'orders/order_feed.html'
+
+

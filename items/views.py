@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from items.models import Item, Category, Tag
 from items.forms import *
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, UpdateView
+from django.urls import reverse_lazy
 
 # Create your views here.o
 
@@ -60,6 +61,20 @@ def categories_edit(request, pk):
         'form': form
     }
     return render(request, 'items/category_form.html', context)
+
+class CategoryUpdate(UpdateView):
+    model = Category
+    fields = '__all__'
+    template_name = 'items/category_form.html'
+    succes_url = reverse_lazy('items:categories_feed')
+
+class CategoryCreate(CreateView):
+    """ Create a category post """
+    template_name = 'items/category_new.html'
+    model = Category
+    fields = '__all__'
+    success_url = reverse_lazy('items:categories_feed')
+    
 
 
 def items_dashboard(request):

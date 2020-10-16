@@ -23,8 +23,10 @@
               <!-- /.card-header -->
               <div class="card-body p-0">
                   <form method="POST" enctype="multipart/form-data">
-                      {% csrf_token %}
-                          <div class="form-group">
+                    {% csrf_token %}
+
+                    {# Website field #}
+                    <div class="form-group">
                         <input
                             class="form-control {% if form.name.errors %}is-invalid{% endif %}"
                             type="text"
@@ -35,22 +37,23 @@
                             {% for error in form.name.errors %}{{ error }}{% endfor %}
                         </div>
                     </div>
-              <div class="form-group">
+
+                    {# Photo field #}
+                    <div class="form-group">
+                        <label>Description:</label>
                         <input
                             class="form-control {% if form.description.errors %}is-invalid{% endif %}"
-                            type="text"
+                            type="file"
                             name="description"
-                            placeholder="Insert the category name ..."
+                            placeholder="description"
                         >
                         <div class="invalid-feedback">
                             {% for error in form.description.errors %}{{ error }}{% endfor %}
                         </div>
                     </div>
 
-                    {# Photo field #}
-            
-                      <input type="submit" class="btn btn-info">
-                  </form>
+                    <button type="submit" class="btn btn-primary btn-block mt-5">Publish!</button>
+                </form>
 
               </div>
               <!-- /.card-body -->
