@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('items/', include(('items.urls', 'items'), namespace='items')),
     path('inventoryLoads/', include(('inventoryLoads.urls', 'inventoryLoads'), namespace='inventoryLoads')),
+    path('users/', include(('users.urls', 'users'), namespace='users')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
