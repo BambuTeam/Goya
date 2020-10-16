@@ -66,10 +66,11 @@ class CategoryUpdate(UpdateView):
     model = Category
     fields = '__all__'
     template_name = 'items/category_form.html'
-    succes_url = reverse_lazy('items:categories_feed')
+    success_url = reverse_lazy('items:categories_feed')
+
+
 
 class CategoryCreate(CreateView):
-    """ Create a category post """
     template_name = 'items/category_new.html'
     model = Category
     fields = '__all__'

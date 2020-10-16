@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head_content %}{% endblock %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/adminlte.min.css' %}" />
+
+</head>
+<body  class="hold-transition login-page">
+
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-5 col-lg-5 pt-2 pl-5 pr-5 pb-5" id="auth-container">
+
+                <div class="login-logo">
+    <a href="../../index2.html"><b>la Web del </b>Henry</a>
+  </div>
+                {% block container %}{% endblock%}
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
