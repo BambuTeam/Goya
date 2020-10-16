@@ -30,6 +30,7 @@
                             type="text"
                             name="name"
                             placeholder="Insert the category name ..."
+                            value = "{{form.name.value}}"
                         >
                         <div class="invalid-feedback">
                             {% for error in form.name.errors %}{{ error }}{% endfor %}
@@ -41,6 +42,7 @@
                             type="text"
                             name="description"
                             placeholder="Insert the category name ..."
+                            value = "{{form.description.value}}"
                         >
                         <div class="invalid-feedback">
                             {% for error in form.description.errors %}{{ error }}{% endfor %}
