@@ -2613,7 +2613,7 @@ fieldset:disabled a.btn {
   margin-right: auto;
   margin-left: auto;
   color: #FFD400;
-  background-color: #002F87;
+  background-color: #212121;
   border-color: #FFD400 ;
   box-shadow: none;
   width: 50% !important;
@@ -20432,7 +20432,7 @@ html.maximized-card {
 .register-page {
   -ms-flex-align: center;
   align-items: center;
-  background: #e9ecef;
+  /* background-color: #FFCD00 !important; */
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -20457,7 +20457,7 @@ html.maximized-card {
 
 .login-card-body,
 .register-card-body {
-  background: #ffffff;
+  background-color: #FFCD00;
   border-top: 0;
   color: #666;
   padding: 20px;

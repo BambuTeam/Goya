@@ -1,3 +1,97 @@
+<style>
+
+  @font-face {
+  font-family: goya-font;
+  src: url(/static/fonts/GothamMedium.ttf);
+}
+
+body{
+  background: #ffc107 url("/media/img-dash/bk-imag.svg") no-repeat fixed center !important;
+  /* background-color: #ffc107 !important; */
+}
+
+.card-body{
+  background-color: #FFCD00 !important;
+  background-color: #1C1B5E;
+            -webkit-box-shadow: 0px 13px 34px -6px rgba(28, 27, 94, 1);
+            -moz-box-shadow: 0px 13px 34px -6px rgba(28, 27, 94, 1);
+            box-shadow: 0px 13px 34px -6px rgba(28, 27, 94, 1);
+}
+
+.form-control{
+  background-color: #ffcc000f !important;
+  border: 2px solid #fff !important;
+  color: black;
+}
+
+.btn-singin {
+  background-color: #000;
+  border: coral;
+}
+
+.btn-block {
+  font-family: goya-font;
+  color: fff !important;
+  background-color: #1C1B5E !important;
+  display: block;
+  width: 100%;
+  font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            padding: 0.8em 4em;
+            display: block;
+            border-radius: 0.4em;
+            margin-bottom: 1.6em;
+            background-color: #ED6755;
+            -webkit-box-shadow: 0px 13px 34px -6px rgba(237, 103, 85, 1);
+            -moz-box-shadow: 0px 13px 34px -6px rgba(237, 103, 85, 1);
+            box-shadow: 0px 13px 34px -6px rgba(237, 103, 85, 1);
+}
+
+.btn-block:hover {
+
+  font-family: goya-font;
+  color: fff !important;
+  background-color: #FFCD00 !important;
+  display: block;
+  width: 100%;
+  font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            padding: 0.8em 4em;
+            display: block;
+            border-radius: 0.4em;
+            margin-bottom: 1.6em;
+            background-color: #1C1B5E;
+            -webkit-box-shadow: 0px 13px 34px -6px rgb(126, 126, 126);
+            -moz-box-shadow: 0px 13px 34px -6px rgb(114, 114, 114);
+            box-shadow: 0px 13px 34px -6px rgb(72, 72, 72);
+}
+
+
+.parallelogram {
+  margin-top: 50px;
+  margin-left: 2250px;
+	width: 100%;
+	height: 150px;
+	transform: skew(20deg);
+  background: #1C1B5E
+}
+
+.logo-goya{
+  margin-left: auto;
+  margin-right: auto;
+    height: 300px;
+    width: 300px;
+}
+
+</style>
+
+
+
+
 {% extends "users/base.html" %}
 {% block head_content %}
     <title> Ingreso </title>
@@ -12,7 +106,7 @@
     {% endif %}
     <div class="card">
         <div class="card-body login-card-body">
- <p class="login-box-msg">Sign in to start your session</p>
+ <p class="login-box-msg" style="font-family: goya-font;">Sign in to start your session</p>
             <form method="POST" action="{% url "users:login" %}">
                 {% csrf_token %}
     <div class="input-group mb-3">
@@ -38,7 +132,11 @@
 
 
 
-        <button class = "btn btn-primary btn-block mt5" type="submit"> Sign In</button>
+        <button class = "btn btn-singin btn-block mt5" type="submit"> Sign In</button>
     </form>
+    <div class="logo-goya">
+      <img src="/media/img-dash/logo-login.svg" alt="logo-login" >
+    </div>
+
 
 {% endblock  %}

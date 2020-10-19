@@ -3,6 +3,17 @@
 <head>
     <style>
         
+#anim{
+
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 300px;
+
+}
+
+        
+        
     </style>
    
 
@@ -20,9 +31,11 @@
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-sm-12 col-md-5 col-lg-5 pt-2 pl-5 pr-5 pb-5" id="auth-container">
+                <div id="anim"></div>
 
                 <div class="login-logo">
-    <a href="../../index2.html"><b>GOYA</b></a>
+
+    <a href="../../index2.html"><b></b></a>
     
   </div>
                 {% block container %}{% endblock%}
@@ -32,4 +45,8 @@
     </div>
 
 </body>
+<script src="{% static 'js/lottie.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+
 </html>
