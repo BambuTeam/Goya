@@ -12,9 +12,9 @@ abajo se usa el decorador para registrarlo en una linea
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     """profile admin """
-    list_display = ('pk', 'user', 'phone_number', 'website', 'picture')
+    list_display = ('pk', 'user', 'phone_number', 'picture')
     list_display_links = ('pk','user', 'phone_number')
-    list_editable = ('website', 'picture')
+    list_editable = ('picture',)
     """campos de busqueda de la administracio """
     search_fields = (
         'user__email',
@@ -32,7 +32,7 @@ class ProfileAdmin(admin.ModelAdmin):
         }),
         ('Extra Info', {
             'fields':(
-                ('website', 'phone_number'),
+                ('phone_number'),
                 ('biograpy'),),
         }),
         ('Metadata', {

@@ -25,9 +25,18 @@
          
 
         <div class="imagei d-flex" style="border-radius: 50% !important; padding-top: 2px !important; ">
-          <img src="../media/profiles/picture1.jpg" class="img-circle elevation-2" style="max-width: 70px; margin-top: -25px !important;" alt="User Image">
+                    {% if request.user.profile.picture %}
+                            <img src="{{ request.user.profile.picture.url }}" class="img-circle elevation-2" style="max-width: 70px; margin-top: -25px !important;" alt="User Image"/>
+                        
+                        {% else %}
+                            <img src="../media/profiles/picture1.jpg" class="img-circle elevation-2" style="max-width: 70px; margin-top: -25px !important;" alt="User Image">
+                        {% endif %}
+
+
+
+          
                     <div class="info ml-2 mt-1">
-        <p class="text-user">Lobo Vásquez</p>
+        <p class="text-user">{{ request.user.username}}</p>
         </div>
         </div>
 
