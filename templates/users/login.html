@@ -1,5 +1,11 @@
 <style>
 
+  a:hover{
+    font-size: 1.1em;
+    text-decoration: wavy;
+    color: #fff !important;
+  }
+
   @font-face {
   font-family: goya-font;
   src: url(/static/fonts/GothamMedium.ttf);
@@ -43,20 +49,18 @@ body{
             display: block;
             border-radius: 0.4em;
             margin-bottom: 1.6em;
-            background-color: #ED6755;
-            -webkit-box-shadow: 0px 13px 34px -6px rgba(237, 103, 85, 1);
-            -moz-box-shadow: 0px 13px 34px -6px rgba(237, 103, 85, 1);
-            box-shadow: 0px 13px 34px -6px rgba(237, 103, 85, 1);
+            background-color: #6d6d6d;
+            
 }
 
 .btn-block:hover {
 
   font-family: goya-font;
-  color: fff !important;
-  background-color: #FFCD00 !important;
+  color: #FFCD00 !important;
+  background-color: #212121 !important;
   display: block;
   width: 100%;
-  font-size: 0.75rem;
+  font-size: 1.11rem;
             font-weight: 400;
             letter-spacing: 0.05em;
             text-decoration: none;
@@ -65,9 +69,9 @@ body{
             border-radius: 0.4em;
             margin-bottom: 1.6em;
             background-color: #1C1B5E;
-            -webkit-box-shadow: 0px 13px 34px -6px rgb(126, 126, 126);
-            -moz-box-shadow: 0px 13px 34px -6px rgb(114, 114, 114);
-            box-shadow: 0px 13px 34px -6px rgb(72, 72, 72);
+            -webkit-box-shadow: 0px 13px 34px -6px rgb(205, 205, 205);
+            -moz-box-shadow: 0px 13px 34px -6px rgb(205, 205, 205);
+            box-shadow: 0px 13px 34px -6px rgb(205, 205, 205);
 }
 
 
@@ -87,10 +91,22 @@ body{
     width: 300px;
 }
 
+.footer {
+  font-family: goya-font;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  padding: 1.0em;
+}
+
 </style>
 
 
-
+<link rel="icon" type="image/png" href="/media/img-dash/user.png">
 
 {% extends "users/base.html" %}
 {% block head_content %}
@@ -106,14 +122,15 @@ body{
     {% endif %}
     <div class="card">
         <div class="card-body login-card-body">
- <p class="login-box-msg" style="font-family: goya-font;">Sign in to start your session</p>
+ <p class="login-box-msg" style="font-family: goya-font;">Please enter
+  your username and password.</p>
             <form method="POST" action="{% url "users:login" %}">
                 {% csrf_token %}
     <div class="input-group mb-3">
           <input class="form-control" type = "text" placeholder= "username" name="username">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-user" style="color: #212121;"></span>
             </div>
           </div>
         </div>
@@ -121,7 +138,7 @@ body{
           <input class="form-control" type="password" placeholder="Password" name="password" >
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+              <span class="fas fa-lock" style="color: #212121;"></span>
             </div>
           </div>
         </div>
@@ -137,6 +154,8 @@ body{
     <div class="logo-goya">
       <img src="/media/img-dash/logo-login.svg" alt="logo-login" >
     </div>
-
+    <div class="footer">
+      <p>GOYA Baskets powered by <a href="http://batrescs.com/"><b style=" color:#FFCD00;">Batres Creative Services, Inc.</b></a> </p>
+    </div>
 
 {% endblock  %}
