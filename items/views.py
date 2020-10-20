@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from items.models import Item, Category, Tag
+from items.models import Item, Category
 from items.forms import *
 from django.views.generic import ListView, CreateView, UpdateView
 from django.urls import reverse_lazy
@@ -9,26 +9,26 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.o
 
 
-class ItemsListView(ListView):
+class ItemsListView(LoginRequiredMixin, ListView):
     template_name = 'items/feed.html'
     model = Item
     paginate_by = 10
     context_object_name = 'items'
 
-
+@login_required
 def item_new(request):
     item_form = ItemForm()
     if request.method == 'POST':
         item_form = ItemForm(request.POST)
         if item_form.is_valid():
             item_form.save()
-            return redirect('')
+            return redirect('items:items_feed')
     context = {
         'form': item_form,
     }
     return render(request, 'items/new_item.html', context)
 
-
+@login_required
 def item_update(request, pk):
     item = Item.objects.get(id=pk)
     item_form = ItemForm(instance=item)
@@ -40,7 +40,7 @@ def item_update(request, pk):
     context = {
         'form': item_form,
     }
-    return render(request, 'items/new_item.html', context)
+    return render(request, 'items/edit_item.html', context)
 
 @login_required
 def categories_feed(request):
@@ -64,7 +64,7 @@ class CategoryCreate(LoginRequiredMixin, CreateView):
     fields = '__all__'
     success_url = reverse_lazy('items:categories_feed')    
 
-
+@login_required
 def items_dashboard(request):
     items = Item.objects.all()
     categories = Category.objects.all()
