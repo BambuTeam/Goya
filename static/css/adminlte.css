@@ -10,7 +10,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -22,7 +22,7 @@
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #ffffff;
-  --gray: #6c757d;
+  --gray: #6c757d;2
   --gray-dark: #343a40;
   --primary: #007bff;
   --secondary: #6c757d;
@@ -2613,7 +2613,7 @@ fieldset:disabled a.btn {
   margin-right: auto;
   margin-left: auto;
   color: #FFD400;
-  background-color: #002F87;
+  background-color: #212121;
   border-color: #FFD400 ;
   box-shadow: none;
   width: 50% !important;
@@ -20432,7 +20432,7 @@ html.maximized-card {
 .register-page {
   -ms-flex-align: center;
   align-items: center;
-  background: #e9ecef;
+  /* background-color: #FFCD00 !important; */
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -20457,7 +20457,7 @@ html.maximized-card {
 
 .login-card-body,
 .register-card-body {
-  background: #ffffff;
+  background-color: #FFCD00;
   border-top: 0;
   color: #666;
   padding: 20px;

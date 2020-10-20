@@ -7,7 +7,7 @@
 <div class="col-10 form-item">
             <div class="card card-secondary d-flex justify-content-center form-item">
               <div class="card-header justify-content-center">
-                <h3 class="card-title justify-content-center">NEW CATEGORYE</h3>
+                <h3 class="card-title justify-content-center">EDIT CATEGORYE</h3>
               </div>
                 <div class="card-body">
                  <form method="POST" enctype="multipart/form-data">
@@ -21,6 +21,7 @@
                             type="text"
                             name="name"
                             id = "name"
+                            value = {{ form.name.value }}
                             placeholder="Insert the category name ..."
                         >
                         <div class="invalid-feedback">
@@ -29,7 +30,9 @@
                         </div>
                       <div class="form-group" style="font-family: goya-font;">
                         <label>Description</label>
-                        <textarea class="form-control" rows="3" placeholder="Enter the description..." id="description" name="description"></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Enter the description..." id="description" name="description">
+                        {{ form.description.value }}
+                        </textarea>
                       </div>
                     </div>
                     {# Photo field #}
@@ -38,7 +41,6 @@
 
                     <button type="submit" class="btn btn-primary-item btn-block mt-5">Add!</button>
                 </form>
-
               </div>
               <!-- /.card-body -->
             </div>
