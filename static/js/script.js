@@ -7,9 +7,10 @@ var animation = bodymovin.loadAnimation({
 })
 
 var animation = bodymovin.loadAnimation({
-    container: document.getElementById('error404'),
+    container: document.getElementById('error404-lootie'),
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: "404-error.json"
+    path: "../../static/js/404-error.json"
+
 })
