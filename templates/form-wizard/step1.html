@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../media/img-dash/step.png" sizes="200x200">
     <title>Step 1</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/fontawesome.css">
@@ -19,6 +20,17 @@
 
 input[type=checkbox], input [type=radio]{
    display: none;
+}
+
+a{
+    color: #fff;
+    font-family: goya-font;
+}
+
+a:hover{
+    color: #ffc107;
+    font-family: goya-font;
+    text-decoration: none;
 }
 
 #wizard_container{
@@ -94,7 +106,6 @@ a#logo {
 
 .content-right {
     background-color: #faf9f5;
-    padding: 60px;
     height: 100%;
     min-height: 100%;
     overflow-y: scroll;
@@ -200,11 +211,17 @@ h3.main_question {
 }
 
 .container-static{
-    margin-top: -520px;
-    max-width: 100%;
+   
+    margin-top: -320px;
+    max-width: 150%;
     height: auto;
 }
 
+.container-static img{
+    display: flex;
+    align-items: center;
+    
+}
 .container_check input:checked ~ .checkmark:after {
     display: block;
 }
@@ -279,7 +296,7 @@ button.backward, button.forward, button.submit {
 
 <body>
     <nav class="navbar">
-        <a class="navbar-brand-custom" href="#">Powered by Batres Creative Services, INC.</a>
+        <a class="navbar-brand-custom" href="http://batrescs.com/" target="_blank">Powered by Batres Creative Services, INC.</a>
         <h1>
             WELCOME!!
         </h1>
@@ -299,7 +316,7 @@ button.backward, button.forward, button.submit {
                     
 	                <!-- /social -->
 	                <div class="container-static">
-	                   <img src="../../media/img-dash/logo-baskets.svg" alt="" class="img-fluid" width="350" height="350">
+	                   <img src="../../media/img-dash/logo-baskets.svg" alt="" class="img-fluid" width="550" height="550">
 	                    <h2>Step One</h2>
 	                    <p>Please select the type of your order.</p>
 	                    <!-- <a href="https://1.envato.market/A6oJN" class="btn_1 rounded yellow" target="_parent">Purchase this template</a>
@@ -312,8 +329,25 @@ button.backward, button.forward, button.submit {
             <!-- /content-left -->
             
 	        <div class="col-xl-8 col-lg-8 content-right" id="start">
-	            <div id="wizard_container" class="wizard" novalidate="novalidate">
-	                <div id="top-wizard">
+                <div id="wizard_container" class="wizard" novalidate="novalidate">
+                    <div id="top-wizard">
+                        <!-- <div id="wizard_container">
+                            <fieldset>
+                                <legend>Please select the type of your order.</legend>
+                                <section>
+                                    
+                                <label>
+                                  <input type="radio" name="color" value="azul"> Regular Order
+                                </label>
+                                
+                                <label style="justify-content: left;">
+                                    <input type="radio" name="color" value="negro"> Custom Order
+                                </label>
+                            </section>
+                        
+                            </fieldset>
+                        </div> -->
+                       
 	                    <span id="location">0 of 3 completed</span>
 	                    <div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%; display: none;"></div></div>
 	                </div>
@@ -324,36 +358,19 @@ button.backward, button.forward, button.submit {
 	                    <div id="middle-wizard" class="wizard-branch wizard-wrapper">
 
 	                    	<div class="step wizard-step current" style="">
-	                            <h2 class="section_title wizard-header">Experience</h2>
-	                            <h3 class="main_question">Select your specialities</h3>
+	                            
+	                            <h3 class="main_question" style="text-transform:uppercase; !important">Please select the type of your order.</h3>
 	                            <div class="form-group add_top_30">
-								    <label class="container_check version_2 active">Wed Design
+								    <label class="container_check version_2 active">Regula Order
 								        <input type="checkbox" name="experience_1[]" value="Wed Design" class="required valid">
 								        <span class="checkmark"></span>
 								    </label>
 								</div>
 								<div class="form-group">
-								    <label class="container_check version_2">Illustration
+								    <label class="container_check version_2">Custom Order
 								        <input type="checkbox" name="experience_1[]" value="Illustration" class="required">
 								        <span class="checkmark"></span>
 								    </label>
-								</div>
-								<div class="form-group">
-								    <label class="container_check version_2">UI/UX Design
-								        <input type="checkbox" name="experience_1[]" value="UI/UX Design" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								</div>
-								<div class="form-group">
-								    <label class="container_check version_2">Mobile Design
-								        <input type="checkbox" name="experience_1[]" value="Mobile Design" class="required">
-								        <span class="checkmark"></span>
-								    </label>
-								</div>
-								<label class="add_top_20">Other Skills <small>(Separated by comas)</small></label>
-								<div class="form-group">
-									
-									<div class="fl-wrap fl-wrap-input"><label for="other_skills" class="fl-label">Write your skills</label><input type="text" name="other_skills" id="other_skills" class="form-control fl-input valid" placeholder="Write your skills"></div>
 								</div>
 	                        </div>
 	                        <!-- /step-->
@@ -435,7 +452,7 @@ button.backward, button.forward, button.submit {
 	                    <div id="bottom-wizard">
 	                        <button type="button" name="backward" class="backward" disabled="disabled">Prev</button>
 	                        <button type="button" name="forward" class="forward">Next</button>
-	                        <button type="submit" name="process" class="submit" disabled="disabled">Submit</button>
+	                        <!-- <button type="submit" name="process" class="submit" disabled="disabled">Submit</button> -->
 	                    </div>
 	                    <!-- /bottom-wizard -->
 	                </form>
