@@ -21,7 +21,7 @@ urlpatterns = [
     path(
         route = '',
         view = views.inventoryload_feed,
-        name = 'inventory_lodad_feed'
+        name = 'inventory_load_feed'
     ),
     path(
         route ='<int:pk>',
