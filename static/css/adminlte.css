@@ -10,7 +10,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- :root {
+:root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -22,7 +22,7 @@
   --teal: #20c997;
   --cyan: #17a2b8;
   --white: #ffffff;
-  --gray: #6c757d;2
+  --gray: #6c757d;
   --gray-dark: #343a40;
   --primary: #007bff;
   --secondary: #6c757d;
@@ -17900,7 +17900,7 @@ textarea.form-control.is-warning {
 
 .card {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .card.bg-dark .card-header {
@@ -20457,7 +20457,8 @@ html.maximized-card {
 
 .login-card-body,
 .register-card-body {
-  background-color: #FFCD00;
+  border-radius: 20px !important;
+  background: #FFCD00;
   border-top: 0;
   color: #666;
   padding: 20px;
@@ -20466,40 +20467,55 @@ html.maximized-card {
 .login-card-body .input-group .form-control,
 .register-card-body .input-group .form-control {
   border-right: 0;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control:focus,
 .register-card-body .input-group .form-control:focus {
   box-shadow: none;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control:focus ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control:focus ~ .input-group-append .input-group-text {
   border-color: #80bdff;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control.is-valid:focus,
 .register-card-body .input-group .form-control.is-valid:focus {
   box-shadow: none;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control.is-valid ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control.is-valid ~ .input-group-append .input-group-text {
   border-color: #28a745;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control.is-invalid:focus,
 .register-card-body .input-group .form-control.is-invalid:focus {
   box-shadow: none;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control.is-invalid ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control.is-invalid ~ .input-group-append .input-group-text {
   border-color: #dc3545;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .input-group-text,
 .register-card-body .input-group .input-group-text {
+  border-radius: 20px;
   background-color: transparent;
   border-bottom-right-radius: 0.25rem;
   border-left: 0;
