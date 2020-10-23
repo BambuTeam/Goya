@@ -282,7 +282,7 @@ button.backward, button.forward, button.submit {
 
 .navbar h1{
     font-family: goya-font;
-    color:#ffc107 !important;
+    color:#faf9f5 !important;
     padding: 20px;
     height: 100%;
     min-height: 100%;
@@ -292,6 +292,64 @@ button.backward, button.forward, button.submit {
     align-items: center;
 
 }
+
+.navbar h1{
+    font-family: goya-font;
+    color:#faf9f5 !important;
+    padding: 20px;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navbar h6{
+    font-family: goya-font;
+    color:#faf9f5 !important;
+    padding: 20px;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* // DATEPICKER // */
+
+[type="date" ] {
+  background:#fff url(../../media/img-dash/ico/calendar.svg)  97% 50% no-repeat ;
+  border: solid 2px #212121;
+  border-radius: 5px;
+  width: 50%;
+  height: 35px;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+[type="time"]{
+background:#fff url(../../media/img-dash/ico/time.svg)  97% 50% no-repeat ;
+border: solid 2px #212121;
+border-radius: 5px;
+width: 30%;
+height: 35px;
+}
+
+[type="time"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
 </style>
 
 <body>
@@ -300,6 +358,7 @@ button.backward, button.forward, button.submit {
         <h1>
             WELCOME!!
         </h1>
+        <h6>Acá va el User Name</h6>
       </nav>
     
     <div class="container-fluid">
@@ -344,12 +403,40 @@ button.backward, button.forward, button.submit {
                                     <input type="radio" name="color" value="negro"> Custom Order
                                 </label>
                             </section>
+                            
+                        </fieldset>
+                    </div> -->
+                    <div>
+                    <span id="location">0 of 3 completed</span>
+                    <div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%; display: none;"></div>
+                    </div>   
+                    <div class="step wizard-step current">
+                        <br>
+
+                        <label  for="start" >Delivery Date:</label>
+
+                        <input type="date" id="start" name="trip-start"
+                               value="2020-10-23"
+                               min="2020-01-01" max="2020-12-31">
                         
-                            </fieldset>
-                        </div> -->
-                       
-	                    <span id="location">0 of 3 completed</span>
-	                    <div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%; display: none;"></div></div>
+                               <input type="time" id="appt" name="appt"
+                                         min="00:00" max="24:00" required>
+                                        <br>
+                                        <br>
+                                         <label for="quantity">Give Away (S)</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="50">
+                            <label for="quantity">V.I.P (M)</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="50">
+                            <label for="quantity">Show Basket (L)</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="50">
+                            <br>
+                            <br>
+                            <textarea rows="4" cols="50" name="comment" form="usrform">
+                                Enter text here...</textarea>
+                       </div>
+                       <br>
+                    </div>
 	                </div>
 	                <!-- /top-wizard -->
 	                <form id="wrapped" method="POST" enctype="multipart/form-data" class="fl-form fl-style-1 wizard-form" novalidate="novalidate" action="phpmailer/send_email_2_phpmailer_template_smtp.php">
@@ -357,7 +444,7 @@ button.backward, button.forward, button.submit {
 	                    <!-- Leave for security protection, read docs for details -->
 	                    <div id="middle-wizard" class="wizard-branch wizard-wrapper">
 
-	                    	<div class="step wizard-step current" style="">
+	                    	<!-- <div class="step wizard-step current" style="">
 	                            
 	                            <h3 class="main_question" style="text-transform:uppercase; !important">Please select the type of your order.</h3>
 	                            <div class="form-group add_top_30">
@@ -372,7 +459,7 @@ button.backward, button.forward, button.submit {
 								        <span class="checkmark"></span>
 								    </label>
 								</div>
-	                        </div>
+	                        </div> -->
 	                        <!-- /step-->
 
 	                        <div class="step wizard-step" style="display: none;">
