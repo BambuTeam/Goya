@@ -1,55 +1,68 @@
 {% extends 'main.html' %}
-{% block content_head %}
 
-<h1 class="m-0 text-dark">Dashboard</h1>
-{% endblock %}
+
+<!-- <h1 class="m-0 text-dark">Dashboard</h1> -->block %}
 {% block content_main %}
-
-<div class="col-12">
+{%include 'searchbar.html'%}
+    
+    <!-- <div class = "col-md-1 pl-5" style="align-items: flex-end;">
+        <a  href="{% url 'items:item_new' %}" class = "btn-add-item " id="rotation"> </a>
+    </div> -->
+    <br>
+    
+<div class="col-12 pl-5 pr-5">
             <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Available Categories </h3>
-
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
+              <div class="card-header bk-tab">
+                <h3 class="card-title text-goya ">CATEGORIES</h3>
+                
+                <div class = "col-md-1 pl-5" style="align-items: flex-end;">
+                  <a  href="{% url 'items:categories_feed' %}" class = "btn-add-item " id="rotation"> </a>
+              </div>
+                 <div class="card-tools">
+                  
                 </div>
               </div>
+            </div>
+
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
-                  <thead>
+                  <thead class="head-td">
                     <tr>
-                        <th>options</th>
                       <th>Name</th>
                       <th>Description</th>
+                        <th>Options</th>
                     </tr>
                   </thead>
                   <tbody>
-                  {% for categorie in categories %}
-                      <tr>
-                      <td>
-                          <a href="{% url 'items:categories_edit' categorie.id%}" class="btn bg-gradient-success">Edit</a>
-                          <a href="" class="btn bg-gradient-danger">Delete</a>
-
+                  {% for category in categories %}
+                    
+                      <td>{{ category.name }}</td>
+                      <td style="text-align: left !important;">{{ category.description }}</td>
+                      <td><div class="btn-group">
+                        <a href="{% url 'items:categories_edit' category.pk %}" class="btn btn-info">Edit</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                      </div>
                       </td>
-                      <td>{{ categorie.name }}</td>
-                      <td>{{ categorie.description }}</td>
                       </tr>
                   {% endfor %}
 
                   </tbody>
+
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-          </div>
+</div>
+<div style="margin-top: 20px; height: 150px;" class="pl-5">
+    <div class="pagination pl-5">
+    
+
+    </div>
+        {% include 'paginator.html' %}
+</div>
+
 
 
 

@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+{% block content_head %}
+
+{% endblock %}
+{% block content_main %}
+
+<div class="col-10 form-item">
+            <div class="card card-secondary d-flex justify-content-center form-item">
+              <div class="card-header justify-content-center">
+                <h3 class="card-title justify-content-center">EDIT CATEGORYE</h3>
+              </div>
+                <div class="card-body">
+                 <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {# Website field #}
+                    <div class="col-sm-6 form-item">
+                      <div class="form-group" style="font-family: goya-font;">
+                        <label>Name</label>
+                        <input
+                            class="form-control {% if form.name.errors %}is-invalid{% endif %}"
+                            type="text"
+                            name="name"
+                            id = "name"
+                            value = {{ form.name.value }}
+                            placeholder="Insert the category name ..."
+                        >
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}{{ error }}{% endfor %}
+                        </div>
+                        </div>
+                      <div class="form-group" style="font-family: goya-font;">
+                        <label>Description</label>
+                        <textarea class="form-control" rows="3" placeholder="Enter the description..." id="description" name="description">
+                        {{ form.description.value }}
+                        </textarea>
+                      </div>
+                    </div>
+                    {# Photo field #}
+                 
+                    <input type="hidden" id = "last_user_update" name = "last_user_update" value = "{{user.pk}}" />
+
+                    <button type="submit" class="btn btn-primary-item btn-block mt-5">Add!</button>
+                </form>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+
+{% endblock %}

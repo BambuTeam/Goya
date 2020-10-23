@@ -5,4 +5,4 @@ from items.models import *
 
 admin.site.register(Item)
 admin.site.register(Category)
-admin.site.register(Tag)
+

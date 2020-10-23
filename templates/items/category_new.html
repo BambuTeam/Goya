@@ -1,58 +1,42 @@
 {% extends 'main.html' %}
 {% block content_head %}
 
-<h1 class="m-0 text-dark">Dashboard</h1>
 {% endblock %}
 {% block content_main %}
 
-<div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Categories Form</h3>
-
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
+<div class="col-10 form-item">
+            <div class="card card-secondary d-flex justify-content-center form-item">
+              <div class="card-header justify-content-center">
+                <h3 class="card-title justify-content-center">NEW CATEGORYE</h3>
               </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                  <form method="POST" enctype="multipart/form-data">
+                <div class="card-body">
+                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-
                     {# Website field #}
-                    <div class="form-group">
+                    <div class="col-sm-6 form-item">
+                      <div class="form-group" style="font-family: goya-font;">
+                        <label>Name</label>
                         <input
                             class="form-control {% if form.name.errors %}is-invalid{% endif %}"
                             type="text"
                             name="name"
+                            id = "name"
                             placeholder="Insert the category name ..."
                         >
                         <div class="invalid-feedback">
                             {% for error in form.name.errors %}{{ error }}{% endfor %}
                         </div>
-                    </div>
-
-                    {# Photo field #}
-                    <div class="form-group">
-                        <label>Description:</label>
-                        <input
-                            class="form-control {% if form.description.errors %}is-invalid{% endif %}"
-                            type="file"
-                            name="description"
-                            placeholder="description"
-                        >
-                        <div class="invalid-feedback">
-                            {% for error in form.description.errors %}{{ error }}{% endfor %}
                         </div>
+                      <div class="form-group" style="font-family: goya-font;">
+                        <label>Description</label>
+                        <textarea class="form-control" rows="3" placeholder="Enter the description..." id="description" name="description"></textarea>
+                      </div>
                     </div>
+                    {# Photo field #}
+                 
+                    <input type="hidden" id = "last_user_update" name = "last_user_update" value = "{{user.pk}}" />
 
-                    <button type="submit" class="btn btn-primary btn-block mt-5">Publish!</button>
+                    <button type="submit" class="btn btn-primary-item btn-block mt-5">Add!</button>
                 </form>
 
               </div>
@@ -60,7 +44,5 @@
             </div>
             <!-- /.card -->
           </div>
-
-
 
 {% endblock %}

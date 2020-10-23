@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../../media/img-dash/step.png" sizes="200x200">
+    <title>Step 1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/fontawesome.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+</head>
+<style>
+
+@font-face {
+  font-family: goya-font;
+  src: url(../../static/fonts/GothamMedium.ttf);
+}
+
+input[type=checkbox], input [type=radio]{
+   display: none;
+}
+
+a{
+    color: #fff;
+    font-family: goya-font;
+}
+
+a:hover{
+    color: #ffc107;
+    font-family: goya-font;
+    text-decoration: none;
+}
+
+#wizard_container{
+    height: 50%;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#top-wizard {
+    padding-bottom: 5px;
+}
+
+a#logo {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    display: block;
+    height: 35px;
+}
+
+#social {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.content-left-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100%;
+    padding: 60px 60px 35px 60px;
+    color: #252525;
+    text-align: center;
+    position: relative;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#social {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.content-left {
+    background-color: #ffc107;
+    padding: 0;
+    box-shadow: 15px 2px 35px 0 rgba(0,0,0,.06);
+    
+}
+
+.row-height {
+    height: 100vh;
+}
+
+.copy {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    opacity: 0.5;
+
+}
+
+.content-right {
+    background-color: #faf9f5;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#progressbar {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #212121;
+    overflow: hidden;
+}
+
+.ui-progressbar {
+    height: 8px;
+    width: 100%;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.container_check.version_2 
+{
+    padding: 13px 15px 13px 45px;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #212121;
+    min-height: 30px;
+    font-weight: 400;
+}
+.container_check 
+{
+    display: block;
+    position: relative;
+    font-size: 14px;
+    font-size: 0.875rem;
+    padding-left: 30px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 400;}
+
+.container_check input:checked ~ .checkmark {
+    background-color: #ffc107;
+    border: 1px solid transparent;
+}
+
+.container_check.version_2 .checkmark {
+    height: 24px;
+    width: 24px;
+    top: 10px;
+    left: 10px;
+}
+
+.container_check .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #212121;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+h2.section_title {
+    display: block;
+    font-size: 26px;
+    font-size: 1.625rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+h3.main_question {
+    margin: 0 0 30px 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 19px;
+    font-size: 1.1875rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.container-static{
+   
+    margin-top: -320px;
+    max-width: 150%;
+    height: auto;
+}
+
+.container-static img{
+    display: flex;
+    align-items: center;
+    
+}
+.container_check input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container_check.version_2 .checkmark:after {
+    top: 5px;
+    left: 8px;
+    width: 7px;
+    height: 10px;
+}
+
+.container_check .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #212121;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+button.backward, button.forward, button.submit {
+    border: none;
+    color:#ffc107;
+    text-decoration: none;
+    transition: background .5s ease;
+    -moz-transition: background .5s ease;
+    -webkit-transition: background .5s ease;
+    -o-transition: background .5s ease;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    background: #212121;
+    position: relative;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    line-height: 1;
+    padding: 12px 30px;}
+
+    .navbar{
+        position: relative;
+        font-family: goya-font;
+        background-color: #1C2654;
+        height: 4em;
+        padding: 10px;
+    }
+
+.navbar h1{
+    font-family: goya-font;
+    color:#ffc107 !important;
+    padding: 20px;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+</style>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand-custom" href="http://batrescs.com/" target="_blank">Powered by Batres Creative Services, INC.</a>
+        <h1>
+            WELCOME!!
+        </h1>
+      </nav>
+    
+    <div class="container-fluid">
+	    <div class="row row-height">
+	        <div class="col-xl-4 col-lg-4 content-left">
+                <!-- <div class="nav-user">
+                    <a href="http://batrescs.com/ " target="_blank" id="logo"><img src="../../media/img-dash/logobcs.svg" alt="" width="75" height="75"></a>
+                    <div class="txt-user-step"> <h1>WELCOME MDF!!</h1></div>
+                </div> -->
+	            <div class="content-left-wrapper">
+                    
+                    
+                    
+                    
+	                <!-- /social -->
+	                <div class="container-static">
+	                   <img src="../../media/img-dash/logo-baskets.svg" alt="" class="img-fluid" width="450" height="450">
+	                    <h2>Step One</h2>
+	                    <p>Please select the type of your order.</p>
+	                    <!-- <a href="https://1.envato.market/A6oJN" class="btn_1 rounded yellow" target="_parent">Purchase this template</a>
+	                    <a href="#start" class="btn_1 rounded mobile_btn">Start Now!</a> -->
+	                </div>
+	                <div class="copy"> <b>V.</b> 2.0.45.0 </div>
+	            </div>
+	            <!-- /content-left-wrapper -->
+	        </div>
+            <!-- /content-left -->
+            
+	        <div class="col-xl-8 col-lg-8 content-right" id="start">
+                <div id="wizard_container" class="wizard" novalidate="novalidate">
+                    <div id="top-wizard">
+                        <!-- <div id="wizard_container">
+                            <fieldset>
+                                <legend>Please select the type of your order.</legend>
+                                <section>
+                                    
+                                <label>
+                                  <input type="radio" name="color" value="azul"> Regular Order
+                                </label>
+                                
+                                <label style="justify-content: left;">
+                                    <input type="radio" name="color" value="negro"> Custom Order
+                                </label>
+                            </section>
+                        
+                            </fieldset>
+                        </div> -->
+                       
+	                    <span id="location">0 of 3 completed</span>
+	                    <div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%; display: none;"></div></div>
+	                </div>
+	                <!-- /top-wizard -->
+	                <form id="wrapped" method="POST" enctype="multipart/form-data" class="fl-form fl-style-1 wizard-form" novalidate="novalidate" action="phpmailer/send_email_2_phpmailer_template_smtp.php">
+	                    <!-- <input id="website" name="website" type="text" value=""> -->
+	                    <!-- Leave for security protection, read docs for details -->
+	                    <div id="middle-wizard" class="wizard-branch wizard-wrapper">
+
+	                    	<div class="step wizard-step current" style="">
+	                            
+	                            <h3 class="main_question" style="text-transform:uppercase; !important">Please select the type of your order.</h3>
+	                            <div class="form-group add_top_30">
+								    <label class="container_check version_2 active">Regula Order
+								        <input type="checkbox" name="experience_1[]" value="Wed Design" class="required valid">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+								<div class="form-group">
+								    <label class="container_check version_2">Custom Order
+								        <input type="checkbox" name="experience_1[]" value="Illustration" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+	                        </div>
+	                        <!-- /step-->
+
+	                        <div class="step wizard-step" style="display: none;">
+							    <h2 class="section_title">Presentation</h2>
+							    <h3 class="main_question">Shor Bio</h3>
+							    <div class="form-group add_top_30">
+							        
+							        <div class="fl-wrap fl-wrap-textarea fl-is-required fl-is-active"><label for="short_bio" class="fl-label">Some words about you</label><textarea name="short_bio" id="short_bio" class="form-control required fl-textarea valid" style="height: 150px" placeholder="Some words about you"></textarea><span for="short_bio" class="error" style="display: none;">Required</span></div>
+							    </div>
+							    <label class="add_top_20">Online Presence</label>
+							    <div class="form-group">
+							        
+							        <div class="fl-wrap fl-wrap-input fl-is-required fl-is-active"><label for="personal_website" class="fl-label">Personal Website</label><input type="text" name="personal_website" id="personal_website" class="form-control required fl-input valid" placeholder="Personal Website"><span for="personal_website" class="error" style="display: none;">Required</span></div>
+							    </div>
+							    <div class="form-group">
+							        
+							        <div class="fl-wrap fl-wrap-input fl-is-required fl-is-active"><label for="linkedin" class="fl-label">Linkedin Profile</label><input type="text" name="linkedin" id="linkedin" class="form-control required fl-input valid" placeholder="Linkedin Profile"></div>
+							    </div>
+							</div>
+							<!-- /step-->
+
+	                        <div class="step wizard-step" style="display: none;">
+	                            <h2 class="section_title">Bio</h2>
+	                            <h3 class="main_question">Personal info</h3>
+	                            <div class="form-group add_top_30">
+	                                
+	                                <div class="fl-wrap fl-wrap-input fl-is-required fl-is-active"><label for="name" class="fl-label">First and Last Name</label><input type="text" name="name" id="name" class="form-control required fl-input valid" onchange="getVals(this, 'name_field');" placeholder="First and Last Name"></div>
+	                            </div>
+	                            <div class="form-group">
+	                                
+	                                <div class="fl-wrap fl-wrap-input fl-is-required fl-is-active"><label for="email" class="fl-label">Email Address</label><input type="email" name="email" id="email" class="form-control required fl-input error" onchange="getVals(this, 'email_field');" placeholder="Email Address"><span for="email" class="error">Wrong email.</span></div>
+	                            </div>
+	                            <div class="form-group">
+	                                
+	                                <div class="fl-wrap fl-wrap-input fl-is-required fl-is-active"><label for="phone" class="fl-label">Phone</label><input type="text" name="phone" id="phone" class="form-control required fl-input valid" placeholder="Phone"></div>
+	                            </div>
+								<label>Gender</label>
+								<div class="form-group radio_input">
+								    <label class="container_radio mr-3">Male
+								        <input type="radio" name="gender" value="Male" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								    <label class="container_radio">Female
+								        <input type="radio" name="gender" value="Female" class="required">
+								        <span class="checkmark"></span>
+								    </label>
+								</div>
+	                            <div class="form-group add_bottom_30 add_top_20">
+	                                <label>Upload Resume<br><small>(File accepted: .pdf, .doc/docx - Max file size: 150KB for demo limit)</small></label>
+	                                <div class="fileupload">
+	                                    <input type="file" name="fileupload" accept=".pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" class="required">
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <!-- /step-->
+
+	                        <div class="submit step wizard-step" id="end" style="display: none;">
+	                            <div class="summary">
+	                                <div class="wrapper">
+	                                    <h3>Thank your for your time<br><span id="name_field">fdsfadfa</span>!</h3>
+	                                    <p>We will contat you shorly at the following email address <strong id="email_field">adsffasdfa</strong></p>
+	                                </div>
+	                                <div class="text-center">
+	                                    <div class="form-group terms">
+	                                        <label class="container_check">Please accept our <a href="#" data-toggle="modal" data-target="#terms-txt">Terms and conditions</a> before Submit
+	                                            <input type="checkbox" name="terms" value="Yes" class="required">
+	                                            <span class="checkmark"></span>
+	                                        </label>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <!-- /step last-->
+
+                        </div>
+                        <br>
+	                    <!-- /middle-wizard -->
+	                    <div id="bottom-wizard">
+	                        <button type="button" name="backward" class="backward" disabled="disabled">Prev</button>
+	                        <button type="button" name="forward" class="forward">Next</button>
+	                        <!-- <button type="submit" name="process" class="submit" disabled="disabled">Submit</button> -->
+	                    </div>
+	                    <!-- /bottom-wizard -->
+	                </form>
+	            </div>
+	            <!-- /Wizard container -->
+	        </div>
+	        <!-- /content-right-->
+	    </div>
+	    <!-- /row-->
+	</div>
+    
+    
+</body>
+
+</html>

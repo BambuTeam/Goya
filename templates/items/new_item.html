@@ -1,41 +1,77 @@
 {% extends 'main.html' %}
 {%  load static %}
+{% load widget_tweaks %}
 {% block content_head %}
-<h3>New Item</h3>
+
 {% endblock %}
 {% block content_main %}
-<div class="col-10 ">
+<div class="col-10 form-item">
 
-  <div class="card card-secondary">
-    <div class="card-header">
-      <h3 class="card-title">Item Forms</h3>
+  <div class="card card-secondary d-flex justify-content-center form-item">
+    <div class="card-header justify-content-center">
+      <h3 class="card-title justify-content-center" style="font-family: goya-font;;">ITEM FORMS</h3>
     </div>
     <div class="card-body">
 
-      <form action = "" method="POST" enctype="multipart/form-data">
+      <form  method="POST" enctype="multipart/form-data">
         {% csrf_token %}
 
-        <div class="col-sm-6">
+        <div class="col-sm-6 form-item">
           <!-- text input -->
-          <div class="form-group">
+          <div class="form-group" style="font-family: goya-font;">
             <label>Name</label>
             <input type="text" class="form-control" placeholder="Enter the item name ..." name="name" id = "name">
+               {% for error in form.name.errors %}
+                            {{ error }}
+                        {% endfor %}
+
           </div>
-          <div class="form-group">
+
+          <div class="form-group" style="font-family: goya-font;">
             <label>Price</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">$</span>
               </div>
               <input type="text" class="form-control" placeholder="Price" name="price">
+                  {% for error in form.price.errors %}
+                            {{ error }}
+                        {% endfor %}
+
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="font-family: goya-font;">
             <label>Description</label>
             <textarea class="form-control" rows="3" placeholder="Enter the description..." name="description"></textarea>
+               {% for error in form.description.errors %}
+                            {{ error }}
+                        {% endfor %}
+
           </div>
+          <div class="form-group" style="font-family: goya-font;">
+            <label>Stock</label>
+            <input type="text" class="form-control" placeholder="Enter the stock ..." name="stock" id = "stock">
+               {% for error in form.stock.errors %}
+                            {{ error }}
+                        {% endfor %}
+
+          </div>
+          <div class="form-group" style="font-family: goya-font;">
+          <label>Category</label>
+            <select name="{{ form.category.name }}" class = "form-control">
+                {% for choice in form.category.field.choices %}
+                    <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+            </select>
+               {% for error in form.category.errors %}
+                            {{ error }}
+                        {% endfor %}
+
+              
+          </div>
+          <input type="hidden" id = "last_user_update" name = "last_user_update" value = "{{user.pk}}" />
         </div>
-        <button class="btn btn-primary btn-block mt-5" type="submit">Register!</button>
+        <button class="btn btn-primary-item btn-block mt-5" type="submit">Register!</button>
       </form>
 
     </div>

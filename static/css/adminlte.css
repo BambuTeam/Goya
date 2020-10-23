@@ -2092,9 +2092,9 @@ pre code {
 }
 
 .form-control:focus {
-  color: #495057;
+  color: #212121;
   background-color: #ffffff;
-  border-color: #80bdff;
+  border-color: #FFCD00;
   outline: 0;
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), none;
 }
@@ -2595,6 +2595,28 @@ fieldset:disabled a.btn {
   background-color: #007bff;
   border-color: #007bff;
   box-shadow: none;
+}
+
+.btn-primary-item{
+  font-family: goya-font;
+  margin-right: auto;
+  margin-left: auto;
+  color: #ffffff;
+  background-color: #212121;
+  border-color: #FFD400 ;
+  box-shadow: none;
+  width: 50% !important;
+}
+
+.btn-primary-item:hover{
+  font-family: goya-font;
+  margin-right: auto;
+  margin-left: auto;
+  color: #FFD400;
+  background-color: #212121;
+  border-color: #FFD400 ;
+  box-shadow: none;
+  width: 50% !important;
 }
 
 .btn-primary:hover {
@@ -3747,7 +3769,7 @@ input[type="button"].btn-block {
   color: #495057;
   text-align: center;
   white-space: nowrap;
-  background-color: #e9ecef;
+  background-color: #FFD400;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
@@ -16031,7 +16053,7 @@ textarea.form-control.is-warning {
 }
 
 .card-secondary:not(.card-outline) > .card-header {
-  background-color: #6c757d;
+  background-color: #212121;
 }
 
 .card-secondary:not(.card-outline) > .card-header,
@@ -17878,7 +17900,7 @@ textarea.form-control.is-warning {
 
 .card {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .card.bg-dark .card-header {
@@ -18066,6 +18088,7 @@ html.maximized-card {
   /* font-size: 1.1rem; */
   font-weight: 400;
   margin: 0;
+  
 }
 
 .card-text {
@@ -20393,6 +20416,7 @@ html.maximized-card {
 
 .login-logo,
 .register-logo {
+  
   font-size: 2.1rem;
   font-weight: 300;
   margin-bottom: .9rem;
@@ -20408,7 +20432,7 @@ html.maximized-card {
 .register-page {
   -ms-flex-align: center;
   align-items: center;
-  background: #e9ecef;
+  /* background-color: #FFCD00 !important; */
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -20433,7 +20457,8 @@ html.maximized-card {
 
 .login-card-body,
 .register-card-body {
-  background: #ffffff;
+  border-radius: 20px !important;
+  background: #FFCD00;
   border-top: 0;
   color: #666;
   padding: 20px;
@@ -20442,40 +20467,55 @@ html.maximized-card {
 .login-card-body .input-group .form-control,
 .register-card-body .input-group .form-control {
   border-right: 0;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control:focus,
 .register-card-body .input-group .form-control:focus {
   box-shadow: none;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control:focus ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control:focus ~ .input-group-append .input-group-text {
   border-color: #80bdff;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control.is-valid:focus,
 .register-card-body .input-group .form-control.is-valid:focus {
   box-shadow: none;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control.is-valid ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control.is-valid ~ .input-group-append .input-group-text {
   border-color: #28a745;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control.is-invalid:focus,
 .register-card-body .input-group .form-control.is-invalid:focus {
   box-shadow: none;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .form-control.is-invalid ~ .input-group-append .input-group-text,
 .register-card-body .input-group .form-control.is-invalid ~ .input-group-append .input-group-text {
   border-color: #dc3545;
+  border-radius: 20px !important;
+
 }
 
 .login-card-body .input-group .input-group-text,
 .register-card-body .input-group .input-group-text {
+  border-radius: 20px;
   background-color: transparent;
   border-bottom-right-radius: 0.25rem;
   border-left: 0;
@@ -31342,13 +31382,13 @@ a.text-muted:hover {
 
 .btn-add-item{
   margin-left: 1em;
-  content: url(/media/img-dash/ico/plus.svg);
+  content: url(/static/img-dash/ico/plus.svg);
   max-width: 30%;
 }
 
 .btn-add-item:hover{
   margin-left: 1em;
-  content: url(/media/img-dash/ico/plus-hover.svg);
+  content: url(/static/img-dash/ico/plus-hover.svg);
   max-width: 30%;
 }
   
@@ -31397,3 +31437,7 @@ box-shadow: 3px -2px 20px 1px rgba(33,33,33,0.24);
   display: none;
 }
 
+.form-item{
+  margin-left: auto;
+  margin-right: auto;
+}
