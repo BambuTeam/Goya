@@ -37,5 +37,4 @@ urlpatterns = [
         view = views.CategoryCreate.as_view(),
         name = 'categories_new'
     ),
-
 ]
