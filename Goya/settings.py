@@ -105,12 +105,12 @@ else:
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'HOST': '127.0.0.1',
-            'PORT': '3306',
-            'NAME': 'db_goya',
-            'USER': 'ngonzalez',
-            'PASSWORD': 'Nestor123',
+            'PORT': '5432',
+            'NAME': 'goya_bd',
+            'USER': 'postgres',
+            'PASSWORD': 'Batres@2020',
         }
     }
 
