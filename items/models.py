@@ -20,7 +20,7 @@ class Item(models.Model):
     category = models.ForeignKey(Category, null=False, on_delete=models.PROTECT)
     last_user_update = models.ForeignKey(User, on_delete = models.PROTECT)
     last_date_update = models.DateField(auto_now = True)
-    photo = models.ImageField(upload_to='items/', default= 'items/default.img')
+    photo = models.ImageField(upload_to='items/', default= 'items/default.png')
 
 
     def __str__(self):

@@ -19,7 +19,7 @@ class ItemsListView(LoginRequiredMixin, ListView):
 def item_new(request):
     item_form = ItemForm()
     if request.method == 'POST':
-        item_form = ItemForm(request.POST)
+        item_form = ItemForm(request.POST, request.FILES)
         if item_form.is_valid():
             item_form.save()
             return redirect('items:items_feed')
