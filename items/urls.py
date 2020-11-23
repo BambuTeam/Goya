@@ -29,7 +29,7 @@ urlpatterns = [
     ),
     path(
         route = 'categories/<int:pk>',
-        view = views.CategoryUpdate.as_view(),
+        view = views.CategoryEdit.as_view(),
         name = 'categories_edit'
     ),
     path(
@@ -37,5 +37,4 @@ urlpatterns = [
         view = views.CategoryCreate.as_view(),
         name = 'categories_new'
     ),
-
 ]

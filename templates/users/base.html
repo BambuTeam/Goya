@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
+
+    {% block head_content %}
+        <style>
         
 #anim{
 
@@ -19,7 +21,7 @@
    
 
     <meta charset="UTF-8">
-    {% block head_content %}{% endblock %}
+    {% endblock %}
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">

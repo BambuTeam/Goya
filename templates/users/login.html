@@ -1,4 +1,14 @@
-<style>
+{% extends "users/base.html" %}
+
+{% load static %}
+
+<link rel="icon" type="image/png" href="{% static '/img-dash/user.png' %}">
+<meta name="theme-color" content="#212121">
+
+
+{% block head_content %}
+    <title> Ingreso </title>
+    <style>
 
   a:hover{
     font-size: 1.1em;
@@ -12,7 +22,7 @@
 }
 
 body{
-  background: #ffc107 url("/media/img-dash/bk-imag.svg") no-repeat fixed center !important;
+  background: #ffc107 url("{% static '/img-dash/bk-imag.svg'%}") no-repeat fixed center !important;
   /* background-color: #ffc107 !important; */
 }
 
@@ -105,14 +115,6 @@ body{
 
 </style>
 
-
-<link rel="icon" type="image/png" href="/media/img-dash/user.png">
-<meta name="theme-color" content="#212121">
-
-{% extends "users/base.html" %}
-{% block head_content %}
-    <title> Ingreso </title>
-
 {% endblock %}
 {% block container %}
 
@@ -153,7 +155,7 @@ body{
         <button class = "btn btn-singin btn-block mt5" type="submit"> Sign In</button>
     </form>
     <div class="logo-goya">
-      <img src="/media/img-dash/logo-login.svg" alt="logo-login" >
+      <img src="{% static '/img-dash/logo-login.svg' %}" alt="logo-login" >
     </div>
     <div class="footer">
       <p>GOYA Baskets powered by <a href="http://batrescs.com/" target="_blank"><b style=" color:#FFCD00;">Batres Creative Services, Inc.</b></a> </p>

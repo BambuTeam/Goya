@@ -10,6 +10,7 @@ urlpatterns = [
     ),
     path(
         route = 'delivery',
-        view = views.
+        view = views.DeliveryList.as_view(),
+        name = 'order_delibery'
     ),
 ]

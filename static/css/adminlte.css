@@ -31382,13 +31382,13 @@ a.text-muted:hover {
 
 .btn-add-item{
   margin-left: 1em;
-  content: url(/media/img-dash/ico/plus.svg);
+  content: url(/static/img-dash/ico/plus.svg);
   max-width: 30%;
 }
 
 .btn-add-item:hover{
   margin-left: 1em;
-  content: url(/media/img-dash/ico/plus-hover.svg);
+  content: url(/static/img-dash/ico/plus-hover.svg);
   max-width: 30%;
 }
   
