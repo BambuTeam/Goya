@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../../media/img-dash/step.png" sizes="200x200">
-    <title>Step 1</title>
+    <title>Step 2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/fontawesome.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -321,12 +321,32 @@ button.backward, button.forward, button.submit {
 
 /* // DATEPICKER // */
 
+
+
+#start{
+    font-size: 18px;
+    color: #212121 ;
+    font-weight: bold;
+    line-height: 25px;
+    letter-spacing: 1px;
+
+}
+
+textarea{
+    overflow: auto;
+    resize: vertical;
+    background-color: cornsilk;
+    height: 100%;
+    width: 100%;
+}
+
 [type="date" ] {
   background:#fff url(../../media/img-dash/ico/calendar.svg)  97% 50% no-repeat ;
-  border: solid 2px #212121;
+  border: solid 1px #212121;
   border-radius: 5px;
-  width: 50%;
-  height: 35px;
+  width: 40%;
+  height: 30px;
+  text-align: center;
 }
 [type="date"]::-webkit-inner-spin-button {
   display: none;
@@ -337,10 +357,11 @@ button.backward, button.forward, button.submit {
 
 [type="time"]{
 background:#fff url(../../media/img-dash/ico/time.svg)  97% 50% no-repeat ;
-border: solid 2px #212121;
+border: solid 1px #212121;
 border-radius: 5px;
-width: 30%;
-height: 35px;
+width: 40%;
+height: 30px;
+text-align: center;
 }
 
 [type="time"]::-webkit-inner-spin-button {
@@ -418,7 +439,7 @@ height: 35px;
 
                         <input type="date" id="start" name="trip-start"
                                value="2020-10-23"
-                               min="2020-01-01" max="2020-12-31">
+                               min="2020-01-01" max="2021-12-31">
                         
                                <input type="time" id="appt" name="appt"
                                          min="00:00" max="24:00" required>
@@ -433,7 +454,7 @@ height: 35px;
                             <br>
                             <br>
                             <textarea rows="4" cols="50" name="comment" form="usrform">
-                                Enter text here...</textarea>
+                            ..............</textarea>
                        </div>
                        <br>
                     </div>
