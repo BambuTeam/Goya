@@ -9,11 +9,11 @@
 
   <div class="card card-secondary d-flex justify-content-center form-item">
     <div class="card-header justify-content-center">
-      <h3 class="card-title justify-content-center" style="font-family: goya-font;;">ITEM FORMS</h3>
+      <h3 class="card-title justify-content-center" style="font-family: goya-font;">ITEM FORMS</h3>
     </div>
     <div class="card-body">
 
-      <form method="POST" enctype="multipart/form-data">
+      <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="col-sm-6 form-item">
@@ -75,13 +75,20 @@
 
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <label>Imagen:</label>
-            {% if form.photo.value == 'default.png'%}
-            <input class="form-control" type="file" name="photo" id="photo" value = "{{form.photo.value}}" >
-            {% else %}
-            <input class="form-control" type="file" name="photo" id="photo">
-            <img src="{{ form.photo.url }}" alt="Imagen Articulo" width="150px" height="120px" id="img_articulo" />
-            {% endif %}
+            <!--Este es el preview -->
+                <div class="img-preview img-preview-sm">
+                  <img src="../media/{{form.photo.value}}" alt="your image" width="100" height="100" />
+                </div>
+            <!--Este es el boton de upload-->
+                <div class=”btn-group”> 
+            <!--asociamos el for del label a la llamada del script de JS -->       
+              <label title=”Subir Imagen” for=”id_{{form.photo.name}}”    class=”btn btn-primary”>
+                  <div style="display: none"> {{form.photo}} </div>
+              <!-- hacer style="display: none es equivalente a class="hide" "--> 
+                  Upload new image
+                  </label> 
+                </div>
+             
           </div>
 
           <input type="hidden" id = "last_user_update" name = "last_user_update" value = "{{user.pk.value}}" />
