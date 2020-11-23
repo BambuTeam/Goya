@@ -43,14 +43,21 @@ body{
 .btn-singin {
   background-color: #000;
   border: coral;
+  color: #fff;
+}
+
+.btn-singin p {
+ 
+  color: #fff;
 }
 
 .btn-block {
   font-family: goya-font;
-  color: fff !important;
-  background-color: #1C1B5E !important;
+  color: #fff !important;
+  background-image: linear-gradient(to right, #1C1B5E 0%, #100f39 50%, #3b39c9 100%);
   display: block;
   width: 100%;
+  height: 50px; 
   font-size: 0.75rem;
             font-weight: 400;
             letter-spacing: 0.05em;
@@ -59,7 +66,10 @@ body{
             display: block;
             border-radius: 0.4em;
             margin-bottom: 1.6em;
-            background-color: #6d6d6d;
+            background-color: #fff;
+            -webkit-box-shadow: 0px 13px 34px -6px rgb(116, 116, 116);
+            -moz-box-shadow: 0px 13px 34px -6px rgb(74, 74, 74);
+            box-shadow: 0px 13px 34px -6px rgb(108, 108, 108);
             
 }
 
@@ -79,9 +89,9 @@ body{
             border-radius: 0.4em;
             margin-bottom: 1.6em;
             background-color: #1C1B5E;
-            -webkit-box-shadow: 0px 13px 34px -6px rgb(205, 205, 205);
-            -moz-box-shadow: 0px 13px 34px -6px rgb(205, 205, 205);
-            box-shadow: 0px 13px 34px -6px rgb(205, 205, 205);
+            -webkit-box-shadow: 2px 25px 34px -8px rgba(0,0,0,0.64);
+            -moz-box-shadow: 2px 25px 34px -8px rgba(0,0,0,0.64);
+            box-shadow: 2px 25px 34px -8px rgba(0,0,0,0.64);
 }
 
 
@@ -111,7 +121,20 @@ body{
   color: white;
   text-align: center;
   padding: 1.0em;
+
+  
+
+  @media only screen and (max-width: 600px) {
+
+    .btn-block{
+      display: none;
+    }
+
+    
+  }
 }
+
+
 
 </style>
 
@@ -145,6 +168,7 @@ body{
             </div>
           </div>
         </div>
+        <br>
 
         </div>
     </div>
