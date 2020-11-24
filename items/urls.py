@@ -19,7 +19,7 @@ urlpatterns = [
     ),
     path(
         route='<int:pk>',
-        view=views.item_update,
+        view=views.ItemEdit.as_view(),
         name='items_update'
     ),
     path(

@@ -28,7 +28,7 @@ def item_new(request):
     }
     return render(request, 'items/new_item.html', context)
 
-@login_required
+""" @login_required
 def item_update(request, pk):
     item = Item.objects.get(id=pk)
     item_form = ItemForm(instance=item)
@@ -41,6 +41,17 @@ def item_update(request, pk):
         'form': item_form,
     }
     return render(request, 'items/edit_item.html', context)
+
+ """
+class ItemEdit(LoginRequiredMixin, UpdateView):
+    model = Item
+    fields = '__all__'
+    template_name = 'items/edit_item.html'
+    success_url = reverse_lazy('items:items_feed')    
+
+
+
+
 
 @login_required
 def categories_feed(request):
