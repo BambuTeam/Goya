@@ -90,10 +90,10 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/app-goya:us-central1:goya-instance',
+            'HOST': '/cloudsql/goyaproyect:us-central1:db-goya',
             'USER': 'ngonzalez',
             'PASSWORD': 'Nestor123',
-            'NAME': 'db_goya',
+            'NAME': 'goya_db',
         }
     }
 else:
@@ -105,12 +105,12 @@ else:
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.mysql',
             'HOST': '127.0.0.1',
-            'PORT': '5432',
-            'NAME': 'goya_bd',
-            'USER': 'postgres',
-            'PASSWORD': 'Batres@2020',
+            'PORT': '3306',
+            'NAME': 'goya_db',
+            'USER': 'ngonzalez',
+            'PASSWORD': 'Nestor123',
         }
     }
 

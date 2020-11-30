@@ -28,21 +28,7 @@ def item_new(request):
     }
     return render(request, 'items/new_item.html', context)
 
-""" @login_required
-def item_update(request, pk):
-    item = Item.objects.get(id=pk)
-    item_form = ItemForm(instance=item)
-    if request.method == 'POST':
-        item_form = ItemForm(request.POST, request.FILES, instance=item)
-        if item_form.is_valid():
-            item_form.save()
-            return redirect('items:items_feed')
-    context = {
-        'form': item_form,
-    }
-    return render(request, 'items/edit_item.html', context)
 
- """
 class ItemEdit(LoginRequiredMixin, UpdateView):
     model = Item
     fields = '__all__'

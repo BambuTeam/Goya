@@ -10,6 +10,9 @@
   <div class="card card-secondary d-flex justify-content-center form-item">
     <div class="card-header justify-content-center">
       <h3 class="card-title justify-content-center" style="font-family: goya-font;">ITEM FORMS</h3>
+      <div>
+        <a class = "btn btn-danger text-align-left" href = "{% url 'items:items_feed'%}"> Back</a>
+      </div>
     </div>
     <div class="card-body">
 
@@ -80,18 +83,10 @@
                   <img src="../media/{{form.photo.value}}" alt="your image" width="100" height="100" />
                 </div>
             <!--Este es el boton de upload-->
-                <div class=”btn-group”> 
-            <!--asociamos el for del label a la llamada del script de JS -->       
-              <label title=”Subir Imagen” for=”id_{{form.photo.name}}”    class=”btn btn-primary”>
-                  <div style="display: none"> {{form.photo}} </div>
-              <!-- hacer style="display: none es equivalente a class="hide" "--> 
-                  
-                  </label> 
-                </div>
              
           </div>
 
-          <input type="hidden" id = "last_user_update" name = "last_user_update" value = "{{user.pk.value}}" />
+          
         </div>
         <button class="btn btn-primary-item btn-block mt-5" type="submit">Update
         </button>
