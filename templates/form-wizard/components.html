@@ -105,7 +105,6 @@ a#logo {
 }
 
 .content-right {
-    background-color: #faf9f5;
     height: 100%;
     min-height: 100%;
     overflow-y: scroll;
@@ -249,28 +248,24 @@ h3.main_question {
 }
 
 button.backward, button.forward, button.submit {
-    border: none;
-    color:#ffc107;
-    text-decoration: none;
-    transition: background .5s ease;
-    -moz-transition: background .5s ease;
-    -webkit-transition: background .5s ease;
-    -o-transition: background .5s ease;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    text-align: center;
-    background: #212121;
-    position: relative;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    border-radius: 3px;
-    line-height: 1;
-    padding: 12px 30px;}
+    -webkit-tap-highlight-color: transparent;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 300;
+  background:#FFFFFF;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  box-shadow: 
+    18px 18px 30px #D1D9E9, 
+    -18px -18px 30px #FFFFFF;
+  resize: vertical;
+  transition: ease .2s;
+  cursor: pointer;
+  font-family: goya-font;
+  
+    }
 
     .navbar{
         position: relative;
@@ -332,13 +327,61 @@ button.backward, button.forward, button.submit {
 
 }
 
-textarea{
-    overflow: auto;
-    resize: vertical;
-    background-color: cornsilk;
-    height: 100%;
-    width: 100%;
+#quantity, #start, #appt{
+    -webkit-tap-highlight-color: transparent;
+  
+  min-height: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 300;
+  
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  box-shadow: 2px 4px 10px #D1D9E9, 1px 1px 3px #212121;
+  resize: vertical;
+  transition: ease .2s;
+  cursor: pointer;
+  color: #252525;
 }
+
+label{
+    font-family: goya-font;
+}
+
+textarea{
+    -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  min-height: 20rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 300;
+  background:#FFFFFF;
+  border: none;
+  outline: none;
+  box-shadow: 2px 1px 2px #D1D9E9, -1px -1px 1px #212121;
+  resize: vertical;
+  transition: ease .2s;
+  cursor: pointer;
+  font-family: goya-font;
+  color: #212121;
+}
+
+textarea::placeholder {
+  color: #FFC11D;
+  font-family: goya-font;
+}
+
+textarea:focus {
+  min-height: 30rem;
+  box-shadow: 
+    inset 10px 10px 23px #D1D9E9, 
+    inset -18px -18px 30px #FFFFFF;
+}
+
+
 
 [type="date" ] {
   background:#fff url(../../media/img-dash/ico/calendar.svg)  97% 50% no-repeat ;
@@ -408,7 +451,7 @@ text-align: center;
 	        </div>
             <!-- /content-left -->
             
-	        <div class="col-xl-8 col-lg-8 content-right" id="start">
+	        <div class="col-xl-8 col-lg-8 content-right" id="start-primary">
                 <div id="wizard_container" class="wizard" novalidate="novalidate">
                     <div id="top-wizard">
                         <!-- <div id="wizard_container">
@@ -453,8 +496,8 @@ text-align: center;
                             <input type="number" id="quantity" name="quantity" min="1" max="50">
                             <br>
                             <br>
-                            <textarea rows="4" cols="50" name="comment" form="usrform">
-                            ..............</textarea>
+                            <textarea name="comment" id="comment" placeholder="Type something..."></textarea>
+
                        </div>
                        <br>
                     </div>
