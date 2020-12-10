@@ -1,7 +1,13 @@
 asgiref==3.2.10
+ddt==1.4.1
 Django==3.1.2
+django-filter==2.4.0
 django-widget-tweaks==1.4.8
+djangorestframework==3.12.2
 flake8==3.8.4
+Jinja2==2.11.2
+Markdown==3.3.3
+MarkupSafe==1.1.1
 mccabe==0.6.1
 Pillow==7.2.0
 psycopg2-binary==2.8.6
@@ -9,4 +15,7 @@ pycodestyle==2.6.0
 pyflakes==2.2.0
 PyMySQL==0.10.1
 pytz==2020.1
+pyunitreport==0.1.4
+selenium==3.141.0
 sqlparse==0.3.1
+urllib3==1.26.2

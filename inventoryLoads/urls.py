@@ -14,6 +14,11 @@ urlpatterns = [
         name = 'inventory_provider_new'
     ),
     path(
+        route = 'provider/newc',
+        view =  views.ProviderNew.as_view(),
+        name = 'inventory_provider_newc'
+    ),
+    path(
         route = 'provider/edit/<int:pk>',
         view = views.provider_edit,
         name = 'inventory-provider_edit'
@@ -33,4 +38,4 @@ urlpatterns = [
         view = views.InventoryCreateview.as_view(),
         name = 'inventory_new'
     )
-]
+] 

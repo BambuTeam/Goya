@@ -5,6 +5,10 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+
+
 # Create your views here.
 
 
@@ -21,10 +25,18 @@ def provider_feed(request):
     return render(request, 'inventoryLoads/provider_feed.html', context)
 
 
+
+class ProviderNew(LoginRequiredMixin, CreateView):
+    template_name = 'inventoryLoads/provider_form.html'
+    model = Provider
+    fields = '__all__'
+    success_url = reverse_lazy('inventoryLoads:inventory_provider')
+
+@login_required
 def provider_new(request):
     form = ProviderForm()
     if request.method == 'POST':
-        form = ProviderForm(request.POST)
+        form = ProviderForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect ('inventoryLoads:inventory_provider')

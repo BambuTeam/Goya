@@ -14,8 +14,8 @@ class Provider(models.Model):
     contact_name = models.CharField(max_length=150, null=True)
     contac_email = models.EmailField(null=True)
     contact_phone = models.PositiveIntegerField(null=True)
-    last_user_update = models.ForeignKey(User, on_delete = models.PROTECT)
-    last_date_update = models.DateField(auto_now = True)
+    last_user_update = models.CharField(max_length=45,null=True)
+    last_date_update = models.DateField(auto_now = True, null=True)
     def __str__(self):
         return self.name
 
