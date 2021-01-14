@@ -1,6 +1,6 @@
-from orders.models import Order
+from orders.models import Order, OrderDetail
 from rest_framework import viewsets, permissions
-from .serializers import OrderSerializer
+from .serializers import OrderSerializer, OrderDetailSerializer
 
 
  
@@ -12,11 +12,12 @@ class OrderViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = OrderSerializer 
 
-class OrderDetailViewSet(viewset.ModelViewSet):
+
+class OrderDetailViewSet(viewsets.ModelViewSet):
     """view Set for all Order Details """
-    queryset= OrderDEtail.objects.all()
+    queryset= OrderDetail.objects.all()
     permission_classes = [
-        permission.AllowAnu
+        permissions.AllowAny
     ]
     serilizer_class = OrderDetailSerializer
     
