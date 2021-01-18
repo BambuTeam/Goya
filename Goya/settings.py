@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'rest_framework',
+    'rest_framework.authtoken',
     'items',
     'inventoryLoads',
     'orders',
@@ -90,7 +91,7 @@ if os.getenv('GAE_APPLICATION', None):
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '/cloudsql/goyaproyect:us-central1:db-goya',
             'USER': 'ngonzalez',
-            'PASSWORD': 'Nestor123',
+            'PASSWORD': 'Nestoracr3',
             'NAME': 'goya_db',
         }
     }
@@ -108,7 +109,7 @@ else:
             'PORT': '5432',
             'NAME': 'goya_bd',
             'USER': 'postgres',
-            'PASSWORD': 'Batres@2020',
+            'PASSWORD': 'Nestoracr3',
         }
     }
 
@@ -172,3 +173,10 @@ EMAIL_HOST_PASSWORD = 'N n12345678'
 LOGIN_URL = '/users/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = LOGIN_URL
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}

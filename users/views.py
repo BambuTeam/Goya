@@ -13,7 +13,52 @@ from django.db.utils import IntegrityError
 from django.contrib.auth.models import User
 from users.models import Profile
 from users.forms import SigupForm
+""" users view for api """
 
+from rest_framework import status, viewsets 
+from rest_framework.decorators import action 
+from rest_framework.response import Response 
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
+
+
+
+from users.serializers import UserLoginSerializer, UserModelSerializer
+
+
+class UserViewSet(viewsets.GenericViewSet):
+
+    queryset = User.objects.filter(is_active=True)
+    serializer_class = UserModelSerializer
+
+    # Detail define si es una petición de detalle o no, en methods añadimos el método permitido, en nuestro caso solo vamos a permitir post
+    @csrf_exempt
+    @action(detail=False, methods=['post'])
+    def loginapi(self, request):
+        """User sign in."""
+        serializer = UserLoginSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user, token = serializer.save()
+        data = {
+            'user': UserModelSerializer(user).data,
+            'access_token': token
+        }
+        return Response(data, status=status.HTTP_201_CREATED)
+
+
+
+
+""" clases for viewsets for api """
+
+
+
+
+
+
+
+
+""" end for api code"""
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
