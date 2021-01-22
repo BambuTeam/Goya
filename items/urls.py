@@ -18,7 +18,7 @@ urlpatterns = [
         name='item_new'
     ),
     path(
-        route='<int:pk>',
+        route='item/<int:pk>',
         view=views.ItemEdit.as_view(),
         name='items_update'
     ),
