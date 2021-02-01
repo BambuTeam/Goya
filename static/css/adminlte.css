@@ -31441,3 +31441,6 @@ box-shadow: 3px -2px 20px 1px rgba(33,33,33,0.24);
   margin-left: auto;
   margin-right: auto;
 }
+
+
+@import "style.scss"
