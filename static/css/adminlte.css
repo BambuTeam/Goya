@@ -11848,8 +11848,9 @@ background-color: whitesmoke;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0;
-  background-color: #141f42;
-  border-right: solid #ffc107 5px;
+  background: rgb(38,59,128);
+background: linear-gradient(8deg, rgba(38,59,128,1) 0%, rgba(38,86,128,1) 35%, rgba(22,31,77,1) 100%);
+  border-right: solid #ffc107 2px;
   -webkit-box-shadow: -7px 6px 5px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: -7px 6px 5px 0px rgba(0,0,0,0.75);
 box-shadow: -7px 6px 5px 0px rgba(0,0,0,0.75);
@@ -13885,7 +13886,7 @@ body.text-sm .control-sidebar {
   background: rgb(38,59,128);
   background: linear-gradient(180deg, rgba(38,59,128,1) 0%, rgba(38,86,128,1) 35%, rgba(22,31,77,1) 100%);
   height: 255px;
-  border: solid #ffc107 3px;
+  border: solid #ffc107 2px;
 
 }
 
@@ -13906,10 +13907,11 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-navy {
-  background-color: #131f44;
-  border-bottom: 5px solid;
+  background: rgb(38,59,128);
+background: linear-gradient(249deg, rgba(38,59,128,1) 0%, rgba(38,86,128,1) 35%, rgba(22,31,77,1) 100%);
+  border-bottom: 3px solid;
   border-image-source: linear-gradient(to left, #F4D44E, #212121);
-  border-image-slice: 1;
+  border-image-slice: 10;
 }
 
 .navbar-olive {
