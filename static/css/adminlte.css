@@ -12673,7 +12673,8 @@ box-shadow: -8px -4px 14px -10px rgba(0,0,0,1);
 }
 
 .nav-legacy.nav-sidebar > .nav-item > .nav-link.active {
-  background: repeating-linear-gradient(45deg, black, transparent 100px);
+  background: rgb(33,33,33);
+  background: linear-gradient(98deg, rgba(33,33,33,1) 0%, rgba(29,40,90,1) 35%, rgba(45,127,194,1) 100%);
   border-left: 3px solid transparent;
   box-shadow: none;
 }
