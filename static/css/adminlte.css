@@ -12073,6 +12073,8 @@ box-shadow: -8px -4px 14px -10px rgba(0,0,0,1);
 
 [class*='sidebar-light-'] .nav-sidebar > .nav-item > .nav-link:active, [class*='sidebar-light-'] .nav-sidebar > .nav-item > .nav-link:focus {
   color: #343a40;
+  background: rgb(33,33,33);
+  background: linear-gradient(98deg, rgba(33,33,33,1) 0%, rgba(149,115,13,1) 35%, rgba(255,193,7,1) 100%);
 }
 
 [class*='sidebar-light-'] .nav-sidebar > .nav-item.menu-open > .nav-link,
