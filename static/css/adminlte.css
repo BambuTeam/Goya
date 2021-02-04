@@ -11586,7 +11586,9 @@ background-color: whitesmoke;
   background: linear-gradient(-45deg, #F4D44E, #F4D44E, #fefefe, #263B80);
 	background-size: 300% 300%;
   animation: gradient 15s ease infinite;
-  border-radius: 20px;
+  -webkit-box-shadow: -9px 10px 38px -13px rgba(0,0,0,1);
+-moz-box-shadow: -9px 10px 38px -13px rgba(0,0,0,1);
+box-shadow: -9px 10px 38px -13px rgba(0,0,0,1); 
   padding: 10px;
   
 }
@@ -31393,7 +31395,7 @@ a.text-muted:hover {
 
 .text-user{
   color: #fff;
-    
+    text-transform: uppercase;
     text-shadow: 
       -1px -1px 1px #111, 
       1px 1px 1px #363636;
@@ -31406,7 +31408,7 @@ a.text-muted:hover {
 .text-user:hover{
   font-family: goya-font-b !important;
   margin-top: -10px;
-  color: #fff;
+  color: #fefefe;
   
   text-decoration: underline;
   
