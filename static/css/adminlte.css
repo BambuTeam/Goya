@@ -4864,6 +4864,9 @@ box-shadow: 3px -2px 20px 1px rgba(33,33,33,0.24);
   /* margin-bottom: 0.5rem; */
   margin-top: 20px;
   padding-top: 0.20em;
+  font-family: goya-font;
+  font-size: 15px;
+  color: #503629;
   
 }
 
@@ -10147,7 +10150,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #007bff !important;
+  color: #263B80 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -11555,9 +11558,10 @@ background-color: whitesmoke;
 }
 
 .main-footer {
-  background: #111b36;
+  background: rgb(17,27,54);
+  background: linear-gradient(253deg, rgba(17,27,54,1) 0%, rgba(33,52,105,1) 49%, rgba(33,33,33,1) 89%);
   border-top: 1px solid #dee2e6;
-  color: #fff;
+  color: #F4D44E;
   padding: 1rem;
 }
 
@@ -11574,8 +11578,30 @@ background-color: whitesmoke;
 }
 
 .content-header h1 {
+  color: #212121 !important;
+  text-transform: uppercase;
+  font-family: goya-font;
   font-size: 1.8rem;
   margin: 0;
+  background: linear-gradient(-45deg, #F4D44E, #F4D44E, #fefefe, #263B80);
+	background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+  border-radius: 20px;
+  padding: 10px;
+  
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .text-sm .content-header h1 {
@@ -18064,12 +18090,13 @@ html.maximized-card {
 }
 
 .card-header {
-  background-color: transparent;
+  background-color: #fefefe17;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.125); */
   padding: 0.75rem 1.25rem;
   position: relative;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
+  
 }
 
 .collapsed-card .card-header {
