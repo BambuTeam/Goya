@@ -5,10 +5,12 @@
 {% endblock %}
 {% block content_main %}
 
-<div class="col-12">
-  <div class="card">
+<div class="col-10 form-item">
+  <div class="card card-secondary">
     <div class="card-header">
-      <h3 class="card-title">Available Providers </h3>
+      <h3 class="card-title-add">Available Providers </h3>
+      <a class = "btn btn-danger text-align-left" href = "{% url 'items:items_feed'%}"> Back</a>
+
 
       <div class="card-tools">
         <div class="input-group input-group-sm" style="width: 150px;">

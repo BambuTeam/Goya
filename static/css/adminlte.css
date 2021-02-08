@@ -11575,6 +11575,11 @@ background-color: whitesmoke;
   padding: 1rem;
 }
 
+.main-footer :hover a{
+  color: #fefefe !important;
+  text-decoration: underline;
+}
+
 .text-sm .main-footer, .main-footer.text-sm {
   padding: 0.812rem;
 }
