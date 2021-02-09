@@ -1722,15 +1722,17 @@ pre code {
   text-align: center;
   padding: 0.55rem;
   vertical-align: top;
-  border-top: solid 2px #ffc107;
-  border-left: solid 1px #ffc10712;
+  border-top: solid 2px #263B80;
+  border-left: solid 1px #263B80;
+  border-bottom: solid 2px #263b80;
   
 }
 
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 1px solid #ffc107;
-  border-left: solid 2px #9f780235;
+  border-bottom: 2px solid #263B80;
+  border-left: solid 2px #263B80;
+  border-top: solid 3px #263B80;
 }
 
 .table tbody + tbody {
@@ -12091,7 +12093,8 @@ box-shadow: -8px -4px 14px -10px rgba(0,0,0,1);
 }
 
 [class*='sidebar-light-'] {
-  background-color: #ffffff;
+  background-color: #212121;
+  border-right: solid #ffc107 2px;
 }
 
 [class*='sidebar-light-'] .user-panel a:hover {
