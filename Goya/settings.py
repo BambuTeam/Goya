@@ -25,7 +25,7 @@ SECRET_KEY = '1z#luf9^ck#uu-2dng1ck*ip+d^#vfy*#3bykl0pqt*s(=8k84'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['app-goya.uc.r.appspot.com', 'localhost','*']
+ALLOWED_HOSTS = ['https://goyasistem.herokuapp.com/', 'localhost','*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
