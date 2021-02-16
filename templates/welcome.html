@@ -2,9 +2,57 @@
 {% block content_head %}
 {% load static%}
 
-<h1 class="m-0 text-dark">Dashboard</h1>
+<h1 class="m-0 text-dark">Dashboard </h1>
 {% endblock %}
 {% block content_main %}
+
+<div class="col-12 row">
+  <div class="col-3">
+    <div class="small-box bg-info">
+      <div class="inner">
+        <h3>151</h3>
+        <p>New Orders</p>
+      </div>
+      <div class="icon">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+      <a href="#" class="small-box-footer">
+        More info <i class="fas fa-arrow-circle-right"></i>
+      </a>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="small-box bg-gradient-success">
+      <div class="inner">
+        <h3>44</h3>
+        <p>User Registrations</p>
+      </div>
+      <div class="icon">
+        <i class="fas fa-user-plus"></i>
+      </div>
+      <a href="#" class="small-box-footer">
+        More info <i class="fas fa-arrow-circle-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="small-box bg-gradient-warning">
+
+      <div class="inner">
+        <h3>Uploads</h3>
+        <p>13,648</p>
+      </div>
+      <div class="icon">
+        <i class="fas fa-arrow-circle-up"></i>
+      </div>
+      <a href="#" class="small-box-footer">
+        More info <i class="fas fa-arrow-circle-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
 
 <div class="col-12">
             <div class="card">
@@ -22,11 +70,11 @@
                 </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
+              <!-- <div class="card-body table-responsive p-0">
                 <h1>{{ request.user.first_name }}</h1>
                 <h2>{{ request.user.last_name }}</h2>
                     
-              </div>
+              </div> -->
               <!-- /.card-body -->
             </div>
             <!-- /.card -->

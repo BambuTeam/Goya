@@ -1,3 +1,6 @@
+
+media/profiles/.DS_Store
+.DS_Store
 .idea/
 .vscode/
 cloud_sql_proxy

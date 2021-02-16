@@ -9,25 +9,31 @@
 
   <div class="card card-secondary d-flex justify-content-center form-item">
     <div class="card-header justify-content-center">
-      <h3 class="card-title justify-content-center" style="font-family: goya-font;">ITEM FORMS</h3>
+      <h3 class="card-title justify-content-center" style="font-family: goya-font;">Edit Items</h3>
       <div>
         <a class = "btn btn-danger text-align-left" href = "{% url 'items:items_feed'%}"> Back</a>
       </div>
     </div>
     <div class="card-body">
 
-      <form method="post" enctype="multipart/form-data">
+      <form method="post" enctype="multipart/form-data" >
         {% csrf_token %}
 
         <div class="col-sm-6 form-item">
           <!-- text input -->
           <div class="form-group" style="font-family: goya-font;">
             <label>Name</label>
-            <input type="text" class="form-control" placeholder="Enter the item name ..." name="name" id = "name" value= "{{form.name.value}}">
-               {% for error in form.name.errors %}
-                            {{ error }}
-                        {% endfor %}
-
+            <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Enter the item name ..." 
+            name="name" 
+            id = "name" 
+            value="{{ form.name.value}}">
+            
+              {% for error in form.name.errors %}
+                  {{ error }}
+              {% endfor %}
           </div>
 
           <div class="form-group" style="font-family: goya-font;">
@@ -36,25 +42,41 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">$</span>
               </div>
-              <input type="text" class="form-control" placeholder="Price" name="price" value = "{{form.price.value}}">
-                  {% for error in form.price.errors %}
-                            {{ error }}
-                        {% endfor %}
-
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Price" 
+                name="price"
+                id="price"
+                value = "{{ form.price.value }}">
+                
+                {% for error in form.price.errors %}
+                  {{ error }}
+                {% endfor %}
             </div>
           </div>
           <div class="form-group" style="font-family: goya-font;">
             <label>Description</label>
-            <textarea class="form-control" rows="3" placeholder="Enter the description..." name="description">{{form.description.value}}</textarea>
-               {% for error in form.description.errors %}
-                            {{ error }}
-                        {% endfor %}
-
+            <textarea 
+              class="form-control" 
+              rows="3" 
+              placeholder="Enter the description..." 
+              name="description"
+              >{{ form.description.value }}
+              </textarea>
+            {% for error in form.description.errors %}
+              {{ error }}
+            {% endfor %}
           </div>
           <div class="form-group" style="font-family: goya-font;">
             <label>Stock</label>
-            <input type="text" class="form-control" placeholder="Enter the stock ..." name="stock" id = "stock" value = "{{form.stock.value}}">
-
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Enter the stock ..." 
+              name="stock" 
+              id = "stock" 
+              value = "{{form.stock.value}}">
                {% for error in form.stock.errors %}
                             {{ error }}
                         {% endfor %}
@@ -62,7 +84,10 @@
           </div>
           <div class="form-group" style="font-family: goya-font;">
           <label>Category</label>
-            <select name="{{ form.category.name }}" value = "{{form.category.value}}"class = "form-control">
+            <select 
+              name="{{ form.category.name }}" 
+              value = "{{form.category.value}}" 
+              class = "form-control" >
                 {% for choice in form.category.field.choices %}
                     <option value="{{ choice.0 }}"    
                     {% if choice.0 == form.category.value%}
@@ -72,23 +97,17 @@
                     >{{ choice.1 }}</option>
                 {% endfor %}
             </select>
-               {% for error in form.category.errors %}
-                            {{ error }}
-                        {% endfor %}
+              {% for error in form.category.errors %}
+                {{ error }}
+              {% endfor %}
 
           </div>
-          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <!--Este es el preview -->
-                <div class="img-preview img-preview-sm">
-                  <img src="../media/{{form.photo.value}}" alt="your image" width="100" height="100" />
-                </div>
-            <!--Este es el boton de upload-->
-             
-          </div>
-
+          
+          <input type="hidden" id = "last_user_update" name = "last_user_update" value = "{{user.pk}}" />
           
         </div>
-        <button class="btn btn-primary-item btn-block mt-5" type="submit">Update
+        <button class="btn btn-primary-item btn-block mt-5" type="submit">
+          Update
         </button>
       </form>
 

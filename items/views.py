@@ -35,6 +35,11 @@ class ItemEdit(LoginRequiredMixin, UpdateView):
     template_name = 'items/edit_item.html'
     success_url = reverse_lazy('items:items_feed')    
 
+class CategoryEdit(LoginRequiredMixin, UpdateView):
+    model = Category
+    fields = '__all__'
+    template_name = 'items/category_edit.html'
+    success_url = reverse_lazy('items:categories_feed')    
 
 
 
@@ -48,11 +53,6 @@ def categories_feed(request):
     return render(request, 'items/categories_feed.html', context)
 
 
-class CategoryEdit(LoginRequiredMixin, UpdateView):
-    model = Category
-    fields = '__all__'
-    template_name = 'items/category_edit.html'
-    success_url = reverse_lazy('items:categories_feed')    
 
 
 class CategoryCreate(LoginRequiredMixin, CreateView):

@@ -25,9 +25,5 @@ urlpatterns = [
         view=views.UserDetailView.as_view(),
         name='detail'
     ),
-    path(
-        route = r'users',
-        view = views.UserViewSet, 
-        name='usersApi'
-    ),
+
 ]

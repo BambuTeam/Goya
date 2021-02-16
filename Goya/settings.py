@@ -25,7 +25,7 @@ SECRET_KEY = '1z#luf9^ck#uu-2dng1ck*ip+d^#vfy*#3bykl0pqt*s(=8k84'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['app-goya.uc.r.appspot.com', 'localhost','*']
+ALLOWED_HOSTS = ['https://goyasistem.herokuapp.com/', 'localhost','*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -102,14 +102,10 @@ else:
     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
     #
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
-    DATABASES = {
+   DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
-            'NAME': 'goya_bd',
-            'USER': 'postgres',
-            'PASSWORD': 'Nestoracr3',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 
