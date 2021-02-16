@@ -1,1 +1,1 @@
-web: gunicorn auth_system.wsgi --log-file - 
+web: gunicorn Goya.wsgi --log-file - 
