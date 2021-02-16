@@ -6820,7 +6820,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 }
 
 .bg-primary {
-  background-color: #007bff !important;
+  background-color: #ffce0e !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -6840,23 +6840,23 @@ button.bg-secondary:focus {
 }
 
 .bg-success {
-  background-color: #28a745 !important;
+  background-color: #ffce0e !important;
 }
 
 a.bg-success:hover, a.bg-success:focus,
 button.bg-success:hover,
 button.bg-success:focus {
-  background-color: #1e7e34 !important;
+  background-color: #ffce0e !important;
 }
 
 .bg-info {
-  background-color: #17a2b8 !important;
+  background-color: #ffce0e !important;
 }
 
 a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
-  background-color: #117a8b !important;
+  background-color: #ffce0e !important;
 }
 
 .bg-warning {
@@ -16279,7 +16279,7 @@ textarea.form-control.is-warning {
 .bg-info .btn-tool,
 .bg-gradient-info .btn-tool,
 .card-info:not(.card-outline) .btn-tool {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.1);
 }
 
 .bg-info .btn-tool:hover,
