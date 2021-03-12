@@ -6851,7 +6851,7 @@ button.bg-success:focus {
 
 .bg-info {
   border-radius: 15px;
-  background: #ff6a07 linear-gradient(180deg, #ffbf00, #ff6a07) repeat-x !important;
+  background: #fefefe linear-gradient(180deg, #fefefe, #ffce0e) repeat-x !important;
 
 }
 
@@ -28970,7 +28970,7 @@ blockquote.quote-gray-dark h6 {
 .bg-gradient-light.btn:hover {
   background: #e2e6ea linear-gradient(180deg, #e6eaed, #e2e6ea) repeat-x !important;
 }
-
+¬
 .bg-gradient-light.btn:not(:disabled):not(.disabled):active, .bg-gradient-light.btn:not(:disabled):not(.disabled).active, .bg-gradient-light.btn:active, .bg-gradient-light.btn.active {
   border-color: #d3d9df;
   color: #1F2D3D;
