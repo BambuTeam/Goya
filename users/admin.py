@@ -15,7 +15,7 @@ class ProfileAdmin(admin.ModelAdmin):
     list_display = ('pk', 'user', 'phone_number', 'picture')
     list_display_links = ('pk','user', 'phone_number')
     list_editable = ('picture',)
-    """campos de busqueda de la administracio """
+    """campos de busqueda de la administracion"""
     search_fields = (
         'user__email',
         'user_first_name',

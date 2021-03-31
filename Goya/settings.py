@@ -25,7 +25,7 @@ SECRET_KEY = '1z#luf9^ck#uu-2dng1ck*ip+d^#vfy*#3bykl0pqt*s(=8k84'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://goyasistem.herokuapp.com/', 'localhost','*']
+ALLOWED_HOSTS = ['https://goyasistem.herokuapp.com/', 'localhost', '*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,8 +59,7 @@ ROOT_URLCONF = 'Goya.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,10 +101,14 @@ else:
     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
     #
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
-   DATABASES = {
+    DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'goya',
+            'USER': 'oscarlopez',
+            'PASSWORD': 'Ol012021',
+            'HOST': 'localhost',
+            'PORT': '',
         }
     }
 
@@ -147,7 +150,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=(
+STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 STATICFILES_FINDER = [

@@ -4,71 +4,72 @@
 <!-- <h1 class="m-0 text-dark">Dashboard</h1> -->block %}
 {% block content_main %}
 {%include 'searchbar.html'%}
-    
-    <!-- <div class = "col-md-1 pl-5" style="align-items: flex-end;">
+
+<!-- <div class = "col-md-1 pl-5" style="align-items: flex-end;">
         <a  href="{% url 'items:item_new' %}" class = "btn-add-item " id="rotation"> </a>
     </div> -->
-    <br>
-    
+<br>
+
 <div class="col-12 pl-5 pr-5">
-            <div class="card">
-              <div class="card-header bk-tab">
-                <h3 class="card-title text-goya ">PROVIDERS</h3>
-                
-                <div class = "col-md-1 pl-5" style="align-items: flex-end;">
-                  <a  href="{% url 'inventoryLoads:inventory_provider_new' %}" class = "btn-add-item " id="rotation"> </a>
-              </div>
-                 <div class="card-tools">
-                  
-                </div>
-              </div>
-            </div>
+  <div class="card">
+    <div class="card-header bk-tab">
+      <h3 class="card-title text-goya ">PROVIDERS</h3>
 
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead class="head-td">
-                    <tr>
-                      
-                      <th>Name</th>
-                      <th>address</th>
-                      <th>email</th>
-                      <th>phone</th>
-                      <th>site</th>
-                        
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {% for provider in providers %}
-                      
-                      <td>{{ provider.name }}</td>
-                      <td>{{ provider.address }}</td>
-                      <td>{{ provider.email }}</td>
-                      <td>{{ provider.phone }}</td>
-                      <td>{{ provider.site }}</td>
+      <div class="col-md-1 pl-5" style="align-items: flex-end;">
+        <a href="{% url 'inventoryLoads:inventory_provider_new' %}" class="btn-add-item " id="rotation"> </a>
+      </div>
+      <div class="card-tools">
 
-                      <td><div class="btn-group">
-                        <a href="{% url 'inventoryLoads:inventory-provider_edit' provider.id %}" class="btn btn-info">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                      </div>
-                      </td>
-                      </tr>
-                  {% endfor %}
+      </div>
+    </div>
+  </div>
 
-                  </tbody>
+  <!-- /.card-header -->
+  <div class="card-body table-responsive p-0">
+    <table class="table table-hover text-nowrap">
+      <thead class="head-td">
+        <tr>
 
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+          <th>Name</th>
+          <th>address</th>
+          <th>email</th>
+          <th>phone</th>
+          <th>site</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for provider in providers %}
+
+        <td>{{ provider.name }}</td>
+        <td>{{ provider.address }}</td>
+        <td>{{ provider.email }}</td>
+        <td>{{ provider.phone }}</td>
+        <td>{{ provider.site }}</td>
+
+        <td>
+          <div class="btn-group">
+            <a href="{% url 'inventoryLoads:inventory_provider_edit' provider.id %}" class="btn btn-info">Edit</a>
+            <a href="{% url 'inventoryLoads:inventory_provider_delete' provider.id %}" class="btn btn-danger">Delete</a>
+          </div>
+        </td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
 </div>
 <div style="margin-top: 20px; height: 150px;" class="pl-5">
-    <div class="pagination pl-5">
-    
+  <div class="pagination pl-5">
 
-    </div>
-        {% include 'paginator.html' %}
+
+  </div>
+  {% include 'paginator.html' %}
 </div>
 
 
