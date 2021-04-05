@@ -15,6 +15,7 @@ class ItemsListView(LoginRequiredMixin, ListView):
     paginate_by = 10
     context_object_name = 'items'
 
+
 @login_required
 def item_new(request):
     item_form = ItemForm()
@@ -33,15 +34,14 @@ class ItemEdit(LoginRequiredMixin, UpdateView):
     model = Item
     fields = '__all__'
     template_name = 'items/edit_item.html'
-    success_url = reverse_lazy('items:items_feed')    
+    success_url = reverse_lazy('items:items_feed')
+
 
 class CategoryEdit(LoginRequiredMixin, UpdateView):
     model = Category
     fields = '__all__'
     template_name = 'items/category_edit.html'
-    success_url = reverse_lazy('items:categories_feed')    
-
-
+    success_url = reverse_lazy('items:categories_feed')
 
 
 @login_required
@@ -53,13 +53,12 @@ def categories_feed(request):
     return render(request, 'items/categories_feed.html', context)
 
 
-
-
 class CategoryCreate(LoginRequiredMixin, CreateView):
     template_name = 'items/category_new.html'
     model = Category
     fields = '__all__'
-    success_url = reverse_lazy('items:categories_feed')    
+    success_url = reverse_lazy('items:categories_feed')
+
 
 @login_required
 def items_dashboard(request):
@@ -72,3 +71,10 @@ def items_dashboard(request):
         'tags': tags_coutn
     }
     return render(request, 'items/dashboard.html', context)
+
+
+# @login_required
+# def item_delete(request)
+#item = ItemDelete.objects.get(id=id)
+# item.delete()
+# return render(request, 'items/new_item.html', context)

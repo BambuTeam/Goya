@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from inventoryLoads.models import *
+from inventoryLoads.models import Provider, InventoryLoad
 from inventoryLoads.forms import *
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
@@ -19,18 +19,17 @@ def provider_feed(request):
     page_number = request.GET.get('page')
     page_object = paginator.get_page(page_number)
     context = {
-        'providers':providers,
-        'page_object':page_object
+        'providers': providers,
+        'page_object': page_object
     }
     return render(request, 'inventoryLoads/provider_feed.html', context)
 
 
-
-class ProviderNew(LoginRequiredMixin, CreateView):
-    template_name = 'inventoryLoads/provider_form.html'
-    model = Provider
-    fields = '__all__'
-    success_url = reverse_lazy('inventoryLoads:inventory_provider')
+# class ProviderNew(LoginRequiredMixin, CreateView):
+ #   template_name = 'inventoryLoads/provider_form.html'
+  #  model = Provider
+   # fields = '__all__'
+    #success_url = reverse_lazy('inventoryLoads:inventory_provider')
 
 @login_required
 def provider_new(request):
@@ -39,25 +38,42 @@ def provider_new(request):
         form = ProviderForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect ('inventoryLoads:inventory_provider')
+            return redirect('inventoryLoads:inventory_provider')
     context = {
-        'form':form,
+        'form': form,
     }
-    return render(request, 'inventoryLoads/provider_form.html', context)
+    return render(request, 'inventoryLoads/provider_new.html', context)
 
 
 def provider_edit(request, pk):
-    provider = Provider.objects.get(id = pk)
+    provider = Provider.objects.get(id=pk)
     form = ProviderForm(instance=provider)
-    if request.method=='POST':
+    if request.method == 'POST':
         form = ProviderForm(request.POST, instance=provider)
         if form.is_valid():
             form.save()
             return redirect('inventoryLoads:inventory_provider')
     context = {
-        'form':form
+        'form': form
     }
-    return render(request, 'inventoryLoads/provider_form.html', context)
+    return render(request, 'inventoryLoads/provider_edit.html', context)
+
+
+# def provider_delete(request, pk):
+#    provider = Provider.objects.get(id=pk)
+#    form = ProviderForm(instance=provider)
+#    if request.method == "POST":
+#        provider.delete()
+#        return redirect('inventoryLoads:inventory_provider')
+#    context = {
+#        'form': form
+#    }
+#    return render(request, 'inventoryLoads/provider_delete.html', context)
+class ProviderDelete(LoginRequiredMixin, DeleteView):
+    model = Provider
+    fields = '__all__'
+    template_name = 'inventoryLoads/provider_delete.html'
+    success_url = reverse_lazy('inventoryLoads:provider_feed')
 
 
 def inventoryload_feed(request):
@@ -73,8 +89,8 @@ def inventoryload_feed(request):
     return render(request, 'inventoryLoads/inventory_feed.html', context)
 
 
-def inventoryLoad_detail (request, pk):
-    Inventoryload = InventoryLoad.objects.get(id = pk )
+def inventoryLoad_detail(request, pk):
+    Inventoryload = InventoryLoad.objects.get(id=pk)
     detail_list = Inventoryload.inventoryloaddetail_set.all()
 
     paginator = Paginator(detail_list, 20)
@@ -94,9 +110,9 @@ def inventoryLoad_new(request):
         form = InventoriLoadForm(request.POST)
         if form.is_valid():
             form.save()
-            redirect ('inventoryLoads:inventory_lodad_feed')
+            redirect('inventoryLoads:inventory_load_feed')
     context = {
-        'form':form
+        'form': form
 
     }
     return render(request, 'inventoryLoads/inventoryload_form.html', context)
@@ -115,6 +131,7 @@ class InventoryCreateview(CreateView):
         else:
             data["children"] = ChildFormset()
         return data
+
     def form_valid(self, form):
         context = self.get_context_data()
         children = context["children"]
@@ -123,8 +140,6 @@ class InventoryCreateview(CreateView):
             children.instance = self.object
             children.save()
         return super().form_valid(form)
+
     def get_success_url(self):
         return reverse("parents:list")
-
-
-

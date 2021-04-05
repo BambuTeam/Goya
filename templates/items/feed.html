@@ -4,77 +4,79 @@
 <!-- <h1 class="m-0 text-dark">Dashboard</h1> -->block %}
 {% block content_main %}
 {%include 'searchbar.html'%}
-    
-    <!-- <div class = "col-md-1 pl-5" style="align-items: flex-end;">
+
+<!-- <div class = "col-md-1 pl-5" style="align-items: flex-end;">
         <a  href="{% url 'items:item_new' %}" class = "btn-add-item " id="rotation"> </a>
     </div> -->
-    <br>
-    
+<br>
+
 <div class="col-12 pl-5 pr-5">
-            <div class="card">
-              <div class="card-header bk-tab">
-                <h3 class="card-title text-goya ">ITEMS</h3>
-                
-                <div class = "col-md-1 pl-5" style="align-items: flex-end;">
-                  <a  href="{% url 'items:item_new' %}" class = "btn-add-item " id="rotation"> </a>
-              </div>
-                 <div class="card-tools">
-                  
-                </div>
-              </div>
-            </div>
+  <div class="card">
+    <div class="card-header bk-tab">
+      <h3 class="card-title text-goya ">ITEMS</h3>
 
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead class="head-td">
-                    <tr>
-                      <th>Image</th>
-                      <th>Name</th>
-                      <th>Price</th>
-                      <th>Description</th>
-                      <th>Stock</th>
-                      <th>Category</th>
-                        <th>Options</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {% for item in items %}
-                      <td>
-                          <img src="{{ item.photo.url }}" alt="{{ item.name }}" width="30px">
-                      </td>
-                      <td>{{ item.name }}</td>
-                      <td>{{ item.price }}</td>
-                      <td style="text-align: left !important;">{{ item.description }}</td>
-                      <td>
-                          {% if item.stock > 0 %}
-                          <span class="tag tag-success">{{ item.stock }} aviable</span></td>
-                              {% else %}
-                              <span class="tag tag-danger">{{ item.stock }} whitout products</span>
-                          {% endif %}
-                      <td>{{ item.category.name }}</td>
-                      <td><div class="btn-group">
-                        <a href="{% url 'items:items_update' item.id %}" class="btn btn-info">Edit</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                      </div>
-                      </td>
-                      </tr>
-                  {% endfor %}
+      <div class="col-md-1 pl-5" style="align-items: flex-end;">
+        <a href="{% url 'items:item_new' %}" class="btn-add-item " id="rotation"> </a>
+      </div>
+      <div class="card-tools">
 
-                  </tbody>
+      </div>
+    </div>
+  </div>
 
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+  <!-- /.card-header -->
+  <div class="card-body table-responsive p-0">
+    <table class="table table-hover text-nowrap">
+      <thead class="head-td">
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Stock</th>
+          <th>Category</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        <td>
+          <img src="{{ item.photo.url }}" alt="{{ item.name }}" width="30px">
+        </td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <td style="text-align: left !important;">{{ item.description }}</td>
+        <td>
+          {% if item.stock > 0 %}
+          <span class="tag tag-success">{{ item.stock }} aviable</span>
+        </td>
+        {% else %}
+        <span class="tag tag-danger">{{ item.stock }} whitout products</span>
+        {% endif %}
+        <td>{{ item.category.name }}</td>
+        <td>
+          <div class="btn-group">
+            <a href="{% url 'items:items_update' item.id %}" class="btn btn-info">Edit</a>
+            <a href="{% url 'items:items_update' item.id %}" class="btn btn-danger">Delete</a>
+          </div>
+        </td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+
+    </table>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
 </div>
 <div style="margin-top: 20px; height: 150px;" class="pl-5">
-    <div class="pagination pl-5">
-    
+  <div class="pagination pl-5">
 
-    </div>
-        {% include 'paginator.html' %}
+
+  </div>
+  {% include 'paginator.html' %}
 </div>
 
 
