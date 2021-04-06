@@ -1,1 +1,1 @@
-web: gunicorn Goya.wsgi --log-file - 
+web: gunicorn Goya.wsgi 
