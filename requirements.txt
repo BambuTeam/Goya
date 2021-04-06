@@ -15,7 +15,6 @@ selenium==3.141.0
 sqlparse==0.3.1
 urllib3==1.26.2
 django-widget-tweaks==1.4.8
-
 appdirs==1.4.4
 distlib==0.3.1
 django-filter==2.4.0
@@ -24,3 +23,4 @@ filelock==3.0.12
 Markdown==3.3.4
 six==1.15.0
 virtualenv==20.4.3
+whitenoise==5.2.0
