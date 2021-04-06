@@ -104,11 +104,11 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'goya',
-            'USER': 'postgres',
-            'PASSWORD': '1234',
-            'HOST': 'localhost',
-            'PORT': '',
+            'NAME': 'ddb13apg9mf1sh',
+            'USER': 'czlqhdbqardyaw',
+            'PASSWORD': 'b17ec668b18eb7bf6f7e2584e3734f4776cc4ba04504ca64008aea5c2f4e1f8f',
+            'HOST': 'ec2-67-202-63-147.compute-1.amazonaws.com',
+            'PORT': '5432',
         }
     }
 
