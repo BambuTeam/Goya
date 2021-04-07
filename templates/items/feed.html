@@ -15,7 +15,7 @@
     <div class="card-header bk-tab">
       <h3 class="card-title text-goya ">ITEMS</h3>
 
-      <div class="col-md-2 pl-5" style="align-items: flex-end;">
+      <div class="col-md-1 pl-5" style="align-items: flex-end;">
         <a href="{% url 'items:item_new' %}" class="btn-add-item " id="rotation"> </a>
       </div>
       <div class="card-tools">
@@ -57,7 +57,7 @@
         <td>
           <div class="btn-group">
             <a href="{% url 'items:items_update' item.id %}" class="btn btn-info">Edit</a>
-            <a href="{% url 'items:items_update' item.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'items:items_delete' item.id %}" class="btn btn-danger">Delete</a>
           </div>
         </td>
         </tr>
