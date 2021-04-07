@@ -25,14 +25,9 @@ urlpatterns = [
     ),
     path(
         route='provider/delete/<int:pk>',
-        view=views.ProviderDelete.as_view(),
+        view=views.provider_delete,
         name='inventory_provider_delete'
     ),
-    # path(
-    #    route='provider/delete/<int:pk>',
-    #    view=views.provider_delete,
-    #    name='inventory_provider_delete'
-    # ),
     path(
         route='',
         view=views.inventoryload_feed,

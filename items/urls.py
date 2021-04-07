@@ -23,6 +23,11 @@ urlpatterns = [
         name='items_update'
     ),
     path(
+        route='item/delete/<int:pk>',
+        view=views.items_delete,
+        name='items_delete'
+    ),
+    path(
         route='categories/',
         view=views.categories_feed,
         name='categories_feed'
@@ -36,5 +41,10 @@ urlpatterns = [
         route='categories/new',
         view=views.CategoryCreate.as_view(),
         name='categories_new'
+    ),
+    path(
+        route='categories/delete/<int:pk>',
+        view=views.categories_delete,
+        name='categories_delete'
     ),
 ]

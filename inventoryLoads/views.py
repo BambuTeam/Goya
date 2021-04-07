@@ -45,6 +45,7 @@ def provider_new(request):
     return render(request, 'inventoryLoads/provider_new.html', context)
 
 
+@login_required
 def provider_edit(request, pk):
     provider = Provider.objects.get(id=pk)
     form = ProviderForm(instance=provider)
@@ -59,21 +60,14 @@ def provider_edit(request, pk):
     return render(request, 'inventoryLoads/provider_edit.html', context)
 
 
-# def provider_delete(request, pk):
-#    provider = Provider.objects.get(id=pk)
-#    form = ProviderForm(instance=provider)
-#    if request.method == "POST":
-#        provider.delete()
-#        return redirect('inventoryLoads:inventory_provider')
-#    context = {
-#        'form': form
-#    }
-#    return render(request, 'inventoryLoads/provider_delete.html', context)
-class ProviderDelete(LoginRequiredMixin, DeleteView):
-    model = Provider
-    fields = '__all__'
-    template_name = 'inventoryLoads/provider_delete.html'
-    success_url = reverse_lazy('inventoryLoads:provider_feed')
+@login_required
+def provider_delete(request, pk):
+    provider = Provider.objects.get(id=pk)
+    provider.delete()
+    context = {
+        'provider': provider
+    }
+    return redirect('inventoryLoads:inventory_provider')
 
 
 def inventoryload_feed(request):

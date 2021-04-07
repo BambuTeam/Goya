@@ -37,6 +37,16 @@ class ItemEdit(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('items:items_feed')
 
 
+@login_required
+def items_delete(request, pk):
+    item = Item.objects.get(id=pk)
+    item.delete()
+    context = {
+        'item': item
+    }
+    return redirect('items:items_feed')
+
+
 class CategoryEdit(LoginRequiredMixin, UpdateView):
     model = Category
     fields = '__all__'
@@ -58,6 +68,16 @@ class CategoryCreate(LoginRequiredMixin, CreateView):
     model = Category
     fields = '__all__'
     success_url = reverse_lazy('items:categories_feed')
+
+
+@login_required
+def categories_delete(request, pk):
+    categories = Category.objects.get(id=pk)
+    categories.delete()
+    context = {
+        'categories': categories
+    }
+    return redirect('items:categories_feed')
 
 
 @login_required
