@@ -103,14 +103,17 @@ else:
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
     DATABASES = {
         'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'ddb13apg9mf1sh',
-            'USER': 'czlqhdbqardyaw',
-            'PASSWORD': 'b17ec668b18eb7bf6f7e2584e3734f4776cc4ba04504ca64008aea5c2f4e1f8f',
-            'HOST': 'ec2-67-202-63-147.compute-1.amazonaws.com',
-            'PORT': '5432',
+            'NAME': 'goya',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '',
         }
     }
+    
 
 
 # Password validation
