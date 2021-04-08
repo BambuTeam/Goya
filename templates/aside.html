@@ -1,104 +1,103 @@
-{% load static %}
-<aside class="main-sidebar elevation-4 sidebar-light-navy">
-  <!-- Brand Logo -->
-  <a href="#" class="brand-link navbar-warning">
-    <img src="{% static '/img-dash/logo-goya.svg' %}" alt="Goya">
-  </a>
+ {% load static %}
+ <aside class="main-sidebar elevation-4 sidebar-light-navy">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link navbar-warning"  >
+      <img src="{% static '/img-dash/logo-goya.svg' %}" alt="Goya" >
+    </a>
 
-  <!-- Sidebar -->
-  <div class="sidebar" style="height: 79vh;">
-    <!-- Sidebar user panel (optional) -->
+    <!-- Sidebar -->
+    <div class="sidebar" style="height: 79vh;" >
+      <!-- Sidebar user panel (optional) -->
 
-    <!-- Sidebar Menu -->
-    <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column nav-legacy" data-widget="treeview" role="menu"
-        data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column nav-legacy" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item has-treeview">
-          <a href="" class="nav-link active">
-            <i class="nav-icon fas fa-chart-bar"></i>
-            <p>
-              Dashboard
-              <i class="fas fa-shopping-basket right"></i>
-            </p>
-          </a>
-        </li>
-        <li class="nav-item has-treeview menu-open">
-          <a href="" class="nav-link ">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Items
-              <i class="fas fa-grip-lines right"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{% url 'items:items_feed' %}" class="nav-link">
-                <i class="far fa-dot-circle nav-icon"></i>
-                <p>Items</p>
-                <!-- <i class="fas fa-angle-left right"></i> -->
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'items:categories_feed'%}" class="nav-link">
-                <i class="far fa-dot-circle nav-icon"></i>
-                <p>Categories</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fa fa-box-open"></i>
-            <p>
-              Inventory
-              <i class="fas fa-grip-lines right"></i>
+                 <li class="nav-item has-treeview">
+            <a href="" class="nav-link active">
+              <i class="nav-icon fas fa-chart-bar"></i>
+              <p>
+                Dashboard
+                <i class="fas fa-shopping-basket right"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="" class="nav-link ">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Items
+                <i class="fas fa-grip-lines right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% url 'items:items_feed' %}" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Items</p>
+                  <!-- <i class="fas fa-angle-left right"></i> -->
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'items:categories_feed'%}" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Categories</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-box-open"></i>
+              <p>
+                Inventory
+                <i class="fas fa-grip-lines right"></i>
+               
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% url 'inventoryLoads:inventory_provider' %}" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Providers</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'inventoryLoads:inventory_load_feed' %}" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Loads</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-file-alt"></i>
+              <p>
+                Orders
+                <i class="fas fa-grip-lines right"></i>
 
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{% url 'inventoryLoads:inventory_provider' %}" class="nav-link">
-                <i class="far fa-dot-circle nav-icon"></i>
-                <p>Providers</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'inventoryLoads:inventory_load_feed' %}" class="nav-link">
-                <i class="far fa-dot-circle nav-icon"></i>
-                <p>Loads</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link">
-            <i class="nav-icon far fa-file-alt"></i>
-            <p>
-              Orders
-              <i class="fas fa-grip-lines right"></i>
-
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="https://goyabaskets.herokuapp.com/" class="nav-link">
-                <i class="far fa-dot-circle nav-icon"></i>
-                <p>Ordes generated</p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://goyabaskets.herokuapp.com/" class="nav-link">
-                <i class="far fa-dot-circle nav-icon"></i>
-                <p>Deliverys</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <!-- /.sidebar-menu -->
-  </div>
-  <!-- /.sidebar -->
-</aside>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{}" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Ordes generated</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{}" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Deliverys</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

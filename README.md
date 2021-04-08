@@ -182,5 +182,39 @@ para ver los resultados podemos ingresar https://PROJECT_ID.REGION_ID.r.appspot.
 ```bash
 gcloud browse
 ```
+pip3 install -r requirements.txt
+pip3 install djangorestframework 
+pip3 install markdown
+pip3 install django-filter    
+python3  manage.py migrate 
+pip3 install psycopg2-binary   
 
-**contacto post-implementacion: ngonzalezr@miumg.edu.gt**
+ pip freeze 
+python3 manage.py createsuperuser
+ pip3 frezze    
+python3 manage.py runserver    
+ psql postgres 
+
+BCS
+
+IONOS
+
+Batrescs.com
+
+https://login.ionos.com/
+
+BAT-bcs$19!
+
+USUARIO admin@bcs-media.com
+
+PASS Batres@2019
+
+heroku login
+git:remote -a goyasistem
+git branch
+git merge oala/create/update master
+heroku run python manage.py createsuperuser
+heroku run python manage.py collectstatic
+git add .
+git commit -m “Update"
+git push heroku master:master

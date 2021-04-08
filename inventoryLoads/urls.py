@@ -23,6 +23,11 @@ urlpatterns = [
         view=views.provider_edit,
         name='inventory_provider_edit'
     ),
+    # path(
+    #    route='provider/delete/<int:pk>',
+    #    view=views.ProviderDelete.as_view(),
+    #    name='inventory_provider_delete'
+    # ),
     path(
         route='provider/delete/<int:pk>',
         view=views.provider_delete,

@@ -1,3 +1,1 @@
-web: gunicorn Goya.wsgi 
-release: python manage.py migrate
-
+web: gunicorn Goya.wsgi --log-file - 

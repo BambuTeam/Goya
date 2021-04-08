@@ -4,80 +4,80 @@
 {% endblock %}
 {% block content_main %}
 <div class="col-lg-7">
-<div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Recently Added Products</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Recently Added Products</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove">
                     <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <ul class="products-list product-list-in-card pl-2 pr-2">
-                    {% for item in items %}
-                    <li class="item">
-                        <div class="product-img">
-                            <img src="{{ item.photo }}" alt="{{ item.name }}" class="img-size-50">
-                        </div>
-                        <div class="product-info">
-                            <a href="javascript:void(0)" class="product-title">{{ item.name }}
-                                <span class="badge badge-warning float-right">{{ item.price }}</span></a>
-                            <span class="product-description">
-                           {{ item.description }}
-                      </span>
-                        </div>
-                    </li>
-                    {% endfor %}
-                </ul>
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer text-center">
-                <a href="{% url 'items:items_feed' %}" class="uppercase">View All Products</a>
-              </div>
-              <!-- /.card-footer -->
+                </button>
             </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            <ul class="products-list product-list-in-card pl-2 pr-2">
+                {% for item in items %}
+                <li class="item">
+                    <div class="product-img">
+                        <img src="{{ item.photo }}" alt="{{ item.name }}" class="img-size-100">
+                    </div>
+                    <div class="product-info">
+                        <a href="javascript:void(0)" class="product-title">{{ item.name }}
+                            <span class="badge badge-warning float-right">{{ item.price }}</span></a>
+                        <span class="product-description">
+                            {{ item.description }}
+                        </span>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer text-center">
+            <a href="{% url 'items:items_feed' %}" class="uppercase">View All Products</a>
+        </div>
+        <!-- /.card-footer -->
     </div>
-    <div class="col-lg-4">
+</div>
+<div class="col-lg-4">
 
-        <div class="card">
-            <div class="card-header border-0">
-                <h3 class="card-title">Categories</h3>
-                <div class="card-tools">
-                    <a href="#" class="btn btn-tool btn-sm">
-                        <i class="fas fa-download"></i>
-                    </a>
-                    <a href="#" class="btn btn-tool btn-sm">
-                        <i class="fas fa-bars"></i>
-                    </a>
-                </div>
+    <div class="card">
+        <div class="card-header border-0">
+            <h3 class="card-title">Categories</h3>
+            <div class="card-tools">
+                <a href="#" class="btn btn-tool btn-sm">
+                    <i class="fas fa-download"></i>
+                </a>
+                <a href="#" class="btn btn-tool btn-sm">
+                    <i class="fas fa-bars"></i>
+                </a>
             </div>
-            <div class="card-body table-responsive p-0">
-                <table class="table table-striped table-valign-middle">
-                    <thead>
+        </div>
+        <div class="card-body table-responsive p-0">
+            <table class="table table-striped table-valign-middle">
+                <thead>
                     <tr>
                         <th>Category</th>
                         <th>Description</th>
                     </tr>
-                    </thead>
-                    <tbody>
+                </thead>
+                <tbody>
                     {% for categiry in categiries %}
-                        <tr>
-                            <td>{{ categiry.name }}</td>
-                            <td>{{ categiry.description }}</td>
-                        </tr>
+                    <tr>
+                        <td>{{ categiry.name }}</td>
+                        <td>{{ categiry.description }}</td>
+                    </tr>
                     {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-footer text-center">
-                <a href="{% url 'items:categories_feed' %}" class="uppercase">View All Categoriees</a>
-            </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer text-center">
+            <a href="{% url 'items:categories_feed' %}" class="uppercase">View All Categoriees</a>
         </div>
     </div>
+</div>
 
 {% endblock %}

@@ -29,7 +29,7 @@ def provider_feed(request):
  #   template_name = 'inventoryLoads/provider_form.html'
   #  model = Provider
    # fields = '__all__'
-    #success_url = reverse_lazy('inventoryLoads:inventory_provider')
+    # success_url = reverse_lazy('inventoryLoads:inventory_provider')
 
 @login_required
 def provider_new(request):
@@ -68,6 +68,13 @@ def provider_delete(request, pk):
         'provider': provider
     }
     return redirect('inventoryLoads:inventory_provider')
+
+
+# class ProviderDelete(LoginRequiredMixin, DeleteView):
+#    model = Provider
+#    fields = '__all__'
+#    template_name = 'inventoryLoads/provider_delete.html'
+#    success_url = reverse_lazy('inventoryLoads:provider_feed')
 
 
 def inventoryload_feed(request):

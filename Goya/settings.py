@@ -104,11 +104,11 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'ddb13apg9mf1sh',
-            'USER': 'czlqhdbqardyaw',
-            'PASSWORD': 'b17ec668b18eb7bf6f7e2584e3734f4776cc4ba04504ca64008aea5c2f4e1f8f',
-            'HOST': 'ec2-67-202-63-147.compute-1.amazonaws.com',
-            'PORT': '5432',
+            'NAME': 'goya',
+            'USER': 'oscarlopez',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '',
         }
     }
 
@@ -149,21 +149,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATICFILES_FINDER = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/items')
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/static/')
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -184,5 +180,3 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ]
 }
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
