@@ -9,7 +9,23 @@
         <a  href="{% url 'items:item_new' %}" class = "btn-add-item " id="rotation"> </a>
     </div> -->
 <br>
+<style>
+  .zoomimg {
+    width: 10%;
+    position: relative;
+    top: 0%;
+    left: 0%;
+  }
 
+  .zoomimg:hover {
+
+    padding: 20px;
+    width: 40%;
+    background-color: #fefefe;
+    transition: 0.2s;
+    transform: scale(2.5);
+  }
+</style>
 <div class="col-12 pl-5 pr-5">
   <div class="card">
     <div class="card-header bk-tab">
@@ -41,7 +57,9 @@
       <tbody>
         {% for item in items %}
         <td>
-          <img src="{{ item.photo.url }}" alt="{{ item.name }}" width="30px">
+          <div class="zoomimg">
+            <img src="{{ item.photo.url }}" alt="" width="80px" style="margin-left: auto; margin-right: auto;">
+          </div>
         </td>
         <td>{{ item.name }}</td>
         <td>{{ item.price }}</td>
