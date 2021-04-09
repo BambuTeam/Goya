@@ -10,13 +10,13 @@
   <div class="col-3">
     <div class="small-box bg-info">
       <div class="inner">
-        <h3>151</h3>
+        <h3>15</h3>
         <p>New Orders</p>
       </div>
       <div class="icon icon-card">
         <i class="fas fa-shopping-cart"></i>
       </div>
-      <a href="#" class="small-box-footer">
+      <a href="https://goyabaskets.herokuapp.com/" class="small-box-footer">
         More info <i class="fas fa-arrow-circle-right"></i>
       </a>
     </div>
@@ -24,7 +24,7 @@
   <div class="col-3">
     <div class="small-box bg-gradient-success">
       <div class="inner">
-        <h3>44</h3>
+        <h3>4</h3>
         <p>User Registrations</p>
       </div>
       <div class="icon">
@@ -114,18 +114,7 @@
                   <div class=""></div>
                 </div>
               </div>
-              <canvas id="visitors-chart" height="200" style="display: block; width: 1085px; height: 200px;"
-                width="1085" class="chartjs-render-monitor"></canvas>
-            </div>
-
-            <div class="d-flex flex-row justify-content-end">
-              <span class="mr-2">
-                <i class="fas fa-square text-primary"></i> This Week
-              </span>
-
-              <span>
-                <i class="fas fa-square text-gray"></i> Last Week
-              </span>
+              <canvas id="Grafica" style="display: block; width: 300px; height: 100px;" width="300"></canvas>
             </div>
           </div>
         </div>
@@ -270,18 +259,7 @@
                   <div class=""></div>
                 </div>
               </div>
-              <canvas id="sales-chart" height="200" style="display: block; width: 1085px; height: 200px;" width="1085"
-                class="chartjs-render-monitor"></canvas>
-            </div>
-
-            <div class="d-flex flex-row justify-content-end">
-              <span class="mr-2">
-                <i class="fas fa-square text-primary"></i> This year
-              </span>
-
-              <span>
-                <i class="fas fa-square text-gray"></i> Last year
-              </span>
+              <canvas id="Grafica2" style="display: block; width: 300px; height: 100px;" width="300"></canvas>
             </div>
           </div>
         </div>
@@ -345,7 +323,56 @@
   </div>
   <!-- /.container-fluid -->
 </div>
+<script>
+  let miCanvas = document.getElementById("Grafica").getContext("2d");
 
+  var chart = new Chart(miCanvas, {
+    type: "line",
+    data: {
+      labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      datasets: [
+        {
+          label: "Last Week",
+          borderColor: "rgb(255, 206, 22)",
+          data: [26, 22, 25, 15, 25, 18, 15]
+        },
+        {
+          label: "This Week",
+          borderColor: "rgb(0, 50, 150)",
+          data: [16, 13, 18, 20, 14, 15, 14]
+        }
+      ]
+    }
+  })
+</script>
+
+<script>
+  let miCanvas2 = document.getElementById("Grafica2").getContext("2d");
+
+  var chart = new Chart(miCanvas2, {
+    type: "bar",
+    data: {
+      labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      datasets: [
+        {
+          label: "Last Year",
+          borderColor: "rgb(255, 206, 22)",
+          backgroundColor: "rgb(255, 206, 22)",
+          data: [26, 22, 25, 15, 25, 18, 15]
+        },
+        {
+          label: "This Year",
+          borderColor: "rgb(0, 50, 150)",
+          backgroundColor: "rgb(0, 50, 150)",
+          data: [16, 13, 18, 20, 14, 15, 14]
+        }
+      ]
+    }
+  })
+</script>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#ffce16" fill-opacity="1" d="M0,96L480,32L960,288L1440,288L1440,320L960,320L480,320L0,320Z"></path>
+</svg>
 
 
 {% endblock %}
