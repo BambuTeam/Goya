@@ -5,7 +5,7 @@ media/profiles/.DS_Store
 .vscode/
 cloud_sql_proxy
 db.sqlite3
-media/
+
 venv/
 ../../__pycache__/
 ../__pycache__/
